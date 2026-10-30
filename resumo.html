@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resumo · Roda do Griô · História 7º</title>
+<style>
+  :root{--palco:#16110d;--palco2:#231a13;--aco:#3d2e22;--aco2:#574333;--ambar:#f2c14e;--ciano:#4fa3e0;--terra:#ff8a3d;--verde:#6fcf7a;--vermelho:#ef5b5b;--texto:#f6eee2;--cinza:#b8a896}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:radial-gradient(1100px 480px at 50% -10%,#2e2117,#16110d 60%),var(--palco);color:var(--texto);line-height:1.6;padding-bottom:60px}
+  header{background:linear-gradient(120deg,#3a2a0a,#2a1a10 50%,#0f2738);padding:26px 18px;text-align:center;box-shadow:0 4px 18px rgba(0,0,0,.5);border-bottom:4px solid var(--ambar)}
+  header .selo{font-size:.78rem;letter-spacing:2px;color:#fff0c2;text-transform:uppercase}
+  header h1{font-size:1.5rem;margin:6px 0 2px}
+  header p{color:#efe6d2;font-size:.92rem}
+  .wrap{max-width:900px;margin:0 auto;padding:16px}
+  .barra-nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:16px 0}
+  .barra-nav a{background:var(--palco2);color:var(--texto);text-decoration:none;padding:7px 12px;border-radius:20px;font-size:.85rem;border:1px solid var(--aco)}
+  .barra-nav a.on{background:var(--ambar);color:#2a1700;font-weight:bold}
+  .barra-nav a.lock{opacity:.5}
+  .intro{background:var(--palco2);border:1px solid var(--aco);border-radius:14px;padding:16px;margin-bottom:16px}
+  .intro h2{color:var(--ambar);font-size:1.1rem;margin-bottom:8px}
+  .sec{margin:26px 0 12px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .sec h2{font-size:1.25rem}
+  .sec .pill{font-size:.7rem;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:12px;background:var(--ambar);color:#2a1700;font-weight:bold}
+  .sec .pill.c17{background:var(--ciano);color:#06192b}
+  .sec .pill.mam{background:var(--terra);color:#2a1004}
+  .sec .pill.all{background:var(--verde);color:#04231a}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+  .card{background:var(--palco2);border:1px solid var(--aco);border-radius:14px;padding:14px;border-top:4px solid var(--ambar)}
+  .card.c17{border-top-color:var(--ciano)}
+  .card.mam{border-top-color:var(--terra)}
+  .card h3{font-size:1rem;margin-bottom:8px}
+  .card ul{margin-left:18px}
+  .card li{margin-bottom:5px;font-size:.93rem}
+  .card b{color:var(--ambar)}
+  .card.c17 b{color:var(--ciano)}
+  .card.mam b{color:var(--terra)}
+  .postit{background:#ffe88a;color:#3a2a00;border-radius:4px;padding:12px 14px;font-size:.92rem;box-shadow:3px 4px 10px rgba(0,0,0,.4);transform:rotate(-1deg);margin:12px 0}
+  .postit b{color:#7a4a00}
+  .peg{background:#3a1414;border:2px solid var(--vermelho);border-radius:12px;padding:12px 14px;margin:12px 0;font-size:.92rem}
+  .peg b{color:#ffb3b3}
+  .narrador{background:#142a28;border-left:4px solid var(--ciano);border-radius:0 12px 12px 0;padding:10px 14px;margin:12px 0;font-size:.92rem;font-style:italic;color:#d4f2ec}
+  .flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+  .flip{perspective:900px;height:190px;cursor:pointer}
+  .flip .inner{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+  .flip.on .inner{transform:rotateY(180deg)}
+  .flip .face{position:absolute;inset:0;backface-visibility:hidden;border-radius:12px;padding:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-size:.88rem}
+  .flip .front{background:linear-gradient(135deg,#35271b,#231a13);border:1px solid var(--aco2);font-weight:bold}
+  .flip .front small{display:block;color:var(--cinza);font-weight:normal;font-size:.72rem;margin-top:6px}
+  .flip .back{background:#0e2b1f;border:1px solid var(--verde);transform:rotateY(180deg)}
+  .tabela{width:100%;border-collapse:collapse;font-size:.88rem;margin-top:8px}
+  .tabela th,.tabela td{border:1px solid var(--aco);padding:7px 9px;text-align:left;vertical-align:top}
+  .tabela th{background:#2e2218}
+  .tabela th.c16{color:var(--ambar)} .tabela th.c17{color:var(--ciano)}
+  .scroll{overflow-x:auto}
+  .fluxo{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch;margin-top:8px}
+  .fluxo .et{flex:1;min-width:120px;background:#1d1610;border:1px solid var(--aco2);border-left:4px solid var(--ciano);border-radius:0 10px 10px 0;padding:10px;font-size:.86rem}
+  .fluxo .et b{color:var(--ciano)}
+  .gloss{columns:2;column-gap:18px}
+  .gloss div{break-inside:avoid;margin-bottom:8px;font-size:.9rem}
+  .gloss b{color:var(--ambar)}
+  @media(max-width:600px){.gloss{columns:1}}
+  .fim{background:linear-gradient(120deg,#122a1f,#163a2a);border:2px solid var(--verde);border-radius:16px;padding:18px;margin-top:24px;text-align:center}
+  .fim h3{color:#8fe0b4;margin-bottom:8px}
+  .fim button{background:var(--verde);color:#04231a;border:none;border-radius:10px;padding:12px 20px;font-size:1rem;font-weight:bold;margin:6px;cursor:pointer;font-family:inherit}
+  .fim button:disabled{background:#33281e;color:#8a7a68;cursor:not-allowed}
+  .fim a.btn{display:inline-block;margin:6px;background:var(--ciano);color:#06192b;text-decoration:none;font-weight:bold;padding:12px 20px;border-radius:10px}
+  .fim a.btn.off{background:#33281e;color:#8a7a68;pointer-events:none}
+  .painel{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;background:var(--palco2);border:1px solid var(--aco);border-radius:12px;padding:10px 14px;margin-bottom:16px;font-size:.85rem}
+  .mini{background:var(--palco);color:var(--texto);border:1px solid var(--aco2);border-radius:8px;padding:6px 10px;font-size:.8rem;cursor:pointer;font-family:inherit}
+  .modal-bg{display:none;position:fixed;inset:0;background:rgba(6,10,7,.97);z-index:50;align-items:center;justify-content:center;padding:16px}
+  .modal-bg.show{display:flex}
+  .modal{background:var(--palco2);border:1px solid var(--ambar);border-radius:14px;padding:22px;max-width:440px;text-align:center}
+  .modal p{margin-bottom:14px}
+  .modal .big{font-size:2.2rem}
+  .modal a{display:inline-block;background:var(--ambar);color:#2a1700;border-radius:8px;padding:10px 18px;font-weight:bold;text-decoration:none}
+  .rodape{text-align:center;color:var(--cinza);font-size:.8rem;margin-top:24px}
+
+  .regua-box{background:var(--palco2);border:1px solid var(--aco);border-radius:14px;padding:16px 16px 10px}
+  .regua-tit{font-weight:bold;font-size:.9rem;margin-bottom:34px;color:var(--ambar)}
+  .regua{position:relative;height:26px;border-radius:6px;background:linear-gradient(90deg,#3a2a2a,#33281e)}
+  .regua.gini{background:linear-gradient(90deg,#1f4a3c,#4a3a1f 50%,#5a1f24)}
+  .faixa{position:absolute;top:0;height:100%;font-size:.68rem;display:flex;align-items:center;justify-content:center;color:#16110d;font-weight:bold;border-right:1px solid #16110d;overflow:hidden;white-space:nowrap}
+  .faixa.f1{background:#ef8a7a}.faixa.f2{background:#f2b36b}.faixa.f3{background:#f2c14e}.faixa.f4{background:#5fd38a}
+  .marca{position:absolute;top:-6px;width:3px;height:38px;background:#fff;transform:translateX(-1px)}
+  .marca span{position:absolute;top:40px;left:50%;transform:translateX(-50%);font-size:.7rem;white-space:nowrap;text-align:center;color:var(--texto);line-height:1.2}
+  .marca.cima span{top:auto;bottom:40px}
+  .regua-nota{font-size:.85rem;color:var(--cinza)}
+  h1,h2,h3{font-family:'Palatino Linotype','Book Antiqua',Palatino,serif;letter-spacing:.3px}
+  .fita{height:14px;background-color:#16110d;background-image:linear-gradient(135deg,#f2c14e 25%,transparent 25%),linear-gradient(225deg,#f2c14e 25%,transparent 25%),linear-gradient(315deg,#ff8a3d 25%,transparent 25%),linear-gradient(45deg,#ff8a3d 25%,transparent 25%);background-size:20px 14px;background-position:-10px 0,-10px 0,0 0,0 0;box-shadow:0 3px 8px rgba(0,0,0,.45)}
+  .mapa{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-areas:"n n n" "o c l" ". a .";gap:8px;max-width:520px;margin:10px auto}
+  .mapa div{border-radius:12px;padding:10px;text-align:center;font-size:.85rem;font-weight:bold;color:#1a1208;line-height:1.3}
+  .mapa small{display:block;font-weight:normal;font-size:.75rem}
+  .mapa .n{grid-area:n;background:#f6e39a}.mapa .o{grid-area:o;background:#f7c4a5}.mapa .c{grid-area:c;background:#c49a7e}
+  .mapa .l{grid-area:l;background:#f5b76b}.mapa .a{grid-area:a;background:#c8a6d6}
+  .reinos td:first-child{font-weight:bold;white-space:nowrap}
+  .reinos .niger td:first-child{color:var(--ambar)} .reinos .sul td:first-child{color:var(--terra)}
+  .duas{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:620px){.duas{grid-template-columns:1fr}}
+  .lado{background:var(--palco2);border:1px solid var(--aco);border-radius:14px;padding:14px}
+  .lado h3{font-size:1rem;margin-bottom:6px}
+  .lado.antes{border-top:4px solid var(--verde)} .lado.depois{border-top:4px solid var(--vermelho)}
+  .linha{position:relative;margin:14px 0 6px 10px;border-left:3px solid var(--ciano);padding-left:18px}
+  .linha .mk{position:relative;margin-bottom:12px;font-size:.92rem}
+  .linha .mk::before{content:"";position:absolute;left:-26px;top:5px;width:13px;height:13px;border-radius:50%;background:var(--ciano);box-shadow:0 0 0 3px #16110d}
+  .linha .mk b.ano{display:inline-block;min-width:92px;color:var(--ciano)}
+  .linha.af{border-left-color:var(--ambar)} .linha.af .mk::before{background:var(--ambar)} .linha.af .mk b.ano{color:var(--ambar)}
+  .barras{display:flex;align-items:flex-end;gap:8px;height:190px;padding:10px 6px 0;border-bottom:2px solid var(--aco2);margin-top:8px}
+  .barras .b{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+  .barras .b span{font-size:.75rem;margin-bottom:3px}
+  .barras .b i{display:block;width:100%;background:linear-gradient(var(--ciano),#2a5f88);border-radius:6px 6px 0 0}
+  .barras .b.queda i{background:linear-gradient(var(--vermelho),#7a2a2a)}
+  .anos{display:flex;gap:8px;padding:4px 6px 0}
+  .anos span{flex:1;text-align:center;font-size:.72rem;color:var(--cinza)}
+  .org{display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:8px}
+  .org .nivel{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;width:100%}
+  .org .no{background:#1d1610;border:1px solid var(--aco2);border-top:4px solid var(--ciano);border-radius:10px;padding:9px 12px;font-size:.86rem;flex:1;min-width:190px;max-width:420px;text-align:center}
+  .org .no b{color:var(--ciano)}
+  .org .seta{color:var(--cinza);font-size:1.1rem}
+  .trio{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:8px}
+  .trio div{background:#1d1610;border:1px solid var(--aco2);border-radius:12px;padding:12px;font-size:.9rem;text-align:center}
+  .trio div b{display:block;font-size:1rem;margin-bottom:4px;color:var(--ciano)}
+  .centro{text-align:center;margin:6px 0 0;font-weight:bold;color:#ffd7a8}
+  .printbtn{background:var(--palco);color:var(--texto);border:1px solid var(--aco2);border-radius:8px;padding:6px 10px;font-size:.8rem;cursor:pointer;font-family:inherit}
+  @media print{
+    body{background:#fff !important;color:#000 !important;padding:0}
+    header{background:#fff !important;color:#000;box-shadow:none;border-bottom:2px solid #000}
+    header .selo,header p{color:#333}
+    .fita,.barra-nav,.painel,.fim,.modal-bg,.printbtn{display:none !important}
+    .wrap{max-width:none;padding:0 6mm}
+    .card,.lado,.intro,.narrador,.tabela th,.tabela td,.trio div,.org .no,.regua-box,.fluxo .et{background:#fff !important;color:#000 !important;border-color:#777 !important}
+    .card b,.lado b,.gloss b,.fluxo .et b,.linha .mk b.ano,.trio div b,.org .no b,.reinos td:first-child{color:#000 !important}
+    .peg{background:#fff !important;color:#000;border:2px solid #000}
+    .peg b{color:#000}
+    .postit{box-shadow:none;transform:none;border:1px solid #999}
+    .flip{height:auto;perspective:none}
+    .flip .inner{transform:none !important}
+    .flip .face{position:static;backface-visibility:visible;transform:none !important;background:#fff !important;color:#000;border:1px solid #777;margin-bottom:2px}
+    .barras .b i{background:#555 !important}
+    .card,.lado,.tabela,.flip,.trio,.org,.linha{break-inside:avoid}
+  }
+
+</style>
+</head>
+<body>
+<header>
+  <div class="selo">Roda do Griô · História 7º ano · CCF</div>
+  <h1>🗺️ Resumo — O Cesto de Memórias</h1>
+  <p>Tudo que cai, em mapas, tabelas, linhas do tempo, cartas e post-its · Capítulo 16 e Capítulo 17 (pp. 48–54 + p. 61)</p>
+</header>
+<div class="fita"></div>
+
+<div class="wrap">
+  <nav class="barra-nav" id="nav">
+    <a href="leitura-guiada.html">📖 Leitura Guiada</a>
+    <a href="quiz.html">🎯 Quiz</a>
+    <a class="on" href="resumo.html">🗺️ Resumo</a>
+    <a href="simulado.html" data-etapa="simulado">📝 Simulado</a>
+    <a href="index.html">🏠 Início</a>
+  </nav>
+
+  <div class="intro">
+    <h2>🧺 O cesto de memórias do griô</h2>
+    <p>Depois de cada roda, o griô guarda o que é mais importante num cesto. Use este resumo para fechar as dúvidas que o Quiz mostrou e para revisar na véspera. Leia até o fim: lá embaixo está o botão <b>"Li o resumo até o fim"</b>, que destrava o <b>📝 Simulado</b>.</p>
+  </div>
+  <div class="painel"><span id="salvo">📜 Rolagem máxima: 0%</span><span><button class="printbtn" onclick="window.print()">🖨️ Imprimir este resumo</button> <button class="mini" onclick="exportar()">📥 Exportar</button></span></div>
+
+  <div class="narrador">🔥 Nota do griô: esta é uma história com dois lados do mesmo oceano. Do lado de cá, a África dos grandes reinos, do comércio pelo deserto e da tradição oral — e também o começo do tráfico pelo Atlântico. Do lado de lá, a América invadida pelos europeus. Guarde as datas, os nomes e, principalmente, o PORQUÊ de cada coisa.</div>
+
+  <!-- ===================== CAPÍTULO 16 ===================== -->
+  <div class="sec"><span class="pill">Capítulo 16</span><h2>🌍 As várias Áfricas</h2></div>
+  <div class="grid">
+    <div class="card"><h3>🌍 Um continente, não um país</h3><ul>
+      <li><b>54 países</b>, mais de <b>1 bilhão</b> de habitantes, mais de <b>mil idiomas e dialetos</b>.</li>
+      <li>Paisagens: <b>savanas, estepes e florestas tropicais</b>.</li>
+      <li>Rios: <b>Níger, Congo, Zambeze e Nilo</b>.</li>
+      <li>Não é <b>homogênea</b>: culturas, religiões, economias e costumes diferentes.</li></ul></div>
+    <div class="card"><h3>🏜️ Dois desertos</h3><ul>
+      <li><b>Saara</b> (norte): “o maior e mais quente”, mas em <b>extensão é o 3º</b> do mundo (atrás da Antártica e da Tundra do Ártico).</li>
+      <li><b>Kalahari</b>: na <b>África Austral</b>.</li></ul></div>
+    <div class="card"><h3>👥 Povos citados</h3><ul>
+      <li><b>Berberes</b> → norte da África.</li>
+      <li><b>Bantos</b> → África Subsaariana (ao sul do Saara).</li>
+      <li><b>Iorubás</b> → África Ocidental.</li></ul></div>
+  </div>
+  <div class="mapa" aria-label="Subdivisões atuais da África, conforme o mapa do livro">
+    <div class="n">Norte da África<small>berberes · Saara</small></div>
+    <div class="o">África Ocidental<small>iorubás · curva do Níger</small></div>
+    <div class="c">África Central<small>Luanda e Benguela</small></div>
+    <div class="l">África Oriental<small>Oceano Índico</small></div>
+    <div class="a">África Austral<small>Kalahari</small></div>
+  </div>
+  <p style="text-align:center;font-size:.8rem;color:var(--cinza)">Esquema das 5 subdivisões do mapa do livro (p. 29) — não está em escala.</p>
+
+  <div class="sec"><span class="pill">Capítulo 16</span><h2>🚫 Preconceito × o que o livro mostra</h2></div>
+  <div class="scroll">
+  <table class="tabela">
+    <thead><tr><th class="c17">❌ Visão preconceituosa</th><th class="c16">✅ O que o livro mostra</th></tr></thead>
+    <tbody>
+      <tr><td>“A África é um país.”</td><td>É um <b>continente</b> com 54 países: “várias Áfricas”.</td></tr>
+      <tr><td>“Lá só há fome, miséria e bichos ferozes.” (filmes cheios de clichês)</td><td>São <b>estereótipos</b>. Há muitos recursos naturais e <b>cidades modernas</b>, como Nairóbi (Quênia).</td></tr>
+      <tr><td>Viajantes da Antiguidade e da Idade Média: africanos “inferiores, bárbaros, feiticeiros”.</td><td>Relatos marcados por <b>estranhamento e preconceito</b>.</td></tr>
+      <tr><td>“Os africanos descendem de Caim e a cor da pele é uma maldição.”</td><td><b>Interpretação equivocada da Bíblia</b>, usada para mandar missionários “salvar” os africanos.</td></tr>
+      <tr><td>Iluministas (Montesquieu, Kant, Hume) diziam que os africanos eram inferiores.</td><td>Mostra os <b>limites do Iluminismo</b> e as bases racistas do pensamento europeu do século XVIII.</td></tr>
+      <tr><td>“África branca” × “África negra”.</td><td>Classificação <b>racista e ideológica</b>.</td></tr>
+      <tr><td>“A história da África é só escravidão.”</td><td><b>Alberto Costa e Silva</b>: a história africana não se resume à escravidão e ao tráfico.</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="grid" style="margin-top:12px">
+    <div class="card"><h3>🔥 Tradição oral e griôs</h3><ul>
+      <li>Fontes: documentos dos <b>próprios africanos</b> e a <b>tradição oral</b>.</li>
+      <li>Comunidades <b>autônomas</b>; chamado: <b>“Vamos ouvir, vamos ouvir”</b>.</li>
+      <li><b>Griô</b> = contador de histórias <b>oficial</b> da comunidade; narrativas <b>faladas ou cantadas</b>.</li>
+      <li>Permite conhecer a África sem a visão distorcida dos europeus.</li></ul></div>
+    <div class="card"><h3>🐪 Norte: islã e comércio transaariano</h3><ul>
+      <li><b>Século VII</b>: árabes invadem; <b>islamização</b> (tornar seguidor do islã).</li>
+      <li>Árabes conquistam os <b>berberes</b>, nômades do Saara.</li>
+      <li><b>Transaariano</b>: norte ↔ sul do Saara (África Subsaariana), em <b>caravanas de camelos</b>.</li>
+      <li>Produtos: <b>ouro, sal, cobre, artesanato, temperos, pedras preciosas</b>.</li></ul></div>
+  </div>
+  <div class="postit">📌 <b>Dica de prova:</b> trans = “através de”. <b>Transaariano</b> atravessa o deserto (camelos). <b>Triangular</b> atravessa o oceano (navios: Europa–África–América).</div>
+
+  <div class="sec"><span class="pill">Capítulo 16</span><h2>👑 Os reinos africanos lado a lado</h2></div>
+  <div class="scroll">
+  <table class="tabela reinos">
+    <thead><tr><th>Reino</th><th>Onde</th><th>Força / destaque</th><th>Para não esquecer</th></tr></thead>
+    <tbody>
+      <tr class="niger"><td>Gana</td><td>Curva do Níger (entre os atuais Mali e Mauritânia)</td><td>Auge nos <b>séculos VIII–XIII</b>; <b>ouro e ferro</b> (armas → exército poderoso)</td><td>Imperador dominava as <b>pessoas</b>, não necessariamente o território; dirigentes do povo <b>soniquê</b></td></tr>
+      <tr class="niger"><td>Mali</td><td>Curva do Níger</td><td>Sucedeu Gana, até o <b>século XVI</b>; controle do comércio de <b>ouro</b> e de <b>escravizados</b>; impostos</td><td><b>Islamismo oficial</b> (religiões tradicionais toleradas); caiu por <b>disputas pelo trono</b></td></tr>
+      <tr class="niger"><td>Songai</td><td>Curva do Níger</td><td><b>Ouro e sal</b>; agricultores escravizados; <b>exército profissional</b></td><td><b>Jihad</b>; universidade de <b>Tombuctu</b>, uma das primeiras do mundo</td></tr>
+      <tr class="sul"><td>Grande Zimbábue</td><td>África Subsaariana</td><td>Controle do <b>ouro</b> vendido na região do atual Moçambique</td><td>Declínio: comércio <b>desviado para o norte</b></td></tr>
+      <tr class="sul"><td>Monomotapa</td><td>África Subsaariana</td><td>Sal, ouro, cobre e <b>marfim</b>; soberano visto como <b>deus</b></td><td>Decadência (fim do séc. XVI–XVII) pela ação dos <b>portugueses</b></td></tr>
+      <tr class="sul"><td>Congo</td><td>África Subsaariana</td><td>Século XIV; rei = <b>manicongo</b>; <b>zimbo</b> (concha-moeda)</td><td>Escravizados trocados por <b>armas de fogo</b>; rei batizado <b>D. João I</b></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="peg">⚠️ <b>Pegadinha:</b> o <b>zimbo</b> é do <b>Congo</b> (não do Zimbábue!). E a ordem da curva do Níger é <b>Gana → Mali → Songai</b>.</div>
+
+  <div class="sec"><span class="pill">Capítulo 16</span><h2>⛓️ Escravidão: antes × depois dos europeus</h2></div>
+  <div class="duas">
+    <div class="lado antes"><h3>Antes dos europeus</h3><ul style="margin-left:18px">
+      <li>Por <b>dívida</b> ou <b>espólio de guerra</b>.</li>
+      <li><b>Não</b> era determinada pelo <b>fenótipo</b> (aparência: pele, olhos, cabelo).</li>
+      <li>Árabes: escravizados vendidos ou trocados por produtos.</li>
+      <li><b>Sociedades linhageiras</b>: consolidou reinos e indicava riqueza; mineradores, agricultores, artesãos, tributos.</li></ul></div>
+    <div class="lado depois"><h3>Com os portugueses (Atlântico)</h3><ul style="margin-left:18px">
+      <li>Primeiro queriam <b>ouro</b>; depois viram o lucro do tráfico.</li>
+      <li>Trocavam <b>tecidos, bebidas alcoólicas e ferramentas</b> por pessoas, sem gastar ouro ou prata.</li>
+      <li>Escravidão por <b>componentes étnicos e raciais</b>: ligada à <b>cor da pele negra</b>.</li>
+      <li>Ideia-chave do texto citado no livro: a escravidão do negro pelo Atlântico <b>cria o racismo</b>.</li></ul></div>
+  </div>
+
+  <div class="sec"><span class="pill">Capítulo 16</span><h2>🌊 O caminho da violência</h2></div>
+  <div class="fluxo">
+    <div class="et"><b>1. Interior</b><br>Caminhada de meses até o litoral, presos pelo <b>libambo</b> (no pescoço).</div>
+    <div class="et"><b>2. Litoral</b><br><b>Barracões</b> com péssimas condições, até a venda.</div>
+    <div class="et"><b>3. Travessia</b><br>Porões dos <b>tumbeiros</b> (de “tumba”): superlotação, doenças, mortes.</div>
+    <div class="et"><b>4. Brasil</b><br>Desembarque principalmente no <b>Rio de Janeiro</b> e na <b>Bahia</b>.</div>
+  </div>
+  <div class="linha af">
+    <div class="mk"><b class="ano">1º</b> <b>Senegâmbia e Alta Guiné</b> (África Ocidental)</div>
+    <div class="mk"><b class="ano">Depois</b> <b>Reino do Congo</b> (África Centro-Ocidental)</div>
+    <div class="mk"><b class="ano">Séc. XVII–XIX</b> <b>Costa da Mina</b> (Daomé; hoje Gana, Togo e Benin) — Golfo de Benin = <b>Costa dos Escravos</b> · monumento <b>Porta do Não Retorno</b></div>
+    <div class="mk"><b class="ano">Também</b> <b>Luanda e Benguela</b> (África Central)</div>
+  </div>
+  <div class="grid">
+    <div class="card"><h3>🔢 Números</h3><ul>
+      <li>Séculos XVI–XIX: até <b>12 milhões</b> de pessoas.</li>
+      <li>Brasil: cerca de <b>4 a 5 milhões</b>.</li>
+      <li>Relações Europa–África–América = <b>comércio triangular</b>.</li></ul></div>
+    <div class="card"><h3>🥁 Herança africana no Brasil</h3><ul>
+      <li>Culinária: <b>dendê, acarajé, vatapá, caruru</b>.</li>
+      <li>Instrumentos: <b>berimbau, agogô, afoxé</b>. Ritmos: <b>jongo, samba, maxixe, choro</b>.</li>
+      <li>Religião: <b>candomblé</b>, umbanda e outras. E muitas palavras da nossa língua.</li></ul></div>
+  </div>
+
+  <!-- ===================== CAPÍTULO 17 ===================== -->
+  <div class="sec"><span class="pill c17">Capítulo 17</span><h2>⚓ Invasão europeia às Américas (Síntese, p. 61)</h2></div>
+  <div class="centro">Invasão europeia às Américas</div>
+  <div class="trio">
+    <div><b>Choque cultural</b>Europeus e povos originários identificaram suas diferenças e estranharam os costumes uns dos outros.</div>
+    <div><b>Imposição cultural</b>Roupas, religião, língua e costumes europeus impostos; a cultura nativa desqualificada → culturas americanas desestruturadas.</div>
+    <div><b>Extermínio das populações nativas</b>Causado pelo uso de <b>armas</b> e por <b>epidemias</b> de doenças trazidas pelos europeus (varíola, sarampo, gripe).</div>
+  </div>
+  <div class="grid" style="margin-top:12px">
+    <div class="card c17"><h3>🧭 Contexto e conceito</h3><ul>
+      <li>Grandes Navegações no contexto do <b>Renascimento</b>.</li>
+      <li><b>Reformas religiosas</b>: a Igreja busca <b>novos fiéis</b> na América.</li>
+      <li><b>Colonização</b>: Estados europeus expandem domínios sobre outros territórios, com vantagens econômicas e políticas.</li>
+      <li>Ideia de <b>superioridade europeia</b>: nativos chamados de “selvagens e atrasados”.</li></ul></div>
+    <div class="card c17"><h3>🎨 Encontro ou desencontro?</h3><ul>
+      <li>Artistas retrataram o contato como <b>pacífico</b>.</li>
+      <li>A carta de <b>Pero Vaz de Caminha</b> mostra danças e a missa — imagem contestada; a missa já é <b>catequização</b>.</li>
+      <li>O livro prefere falar em <b>desencontro</b>.</li></ul></div>
+    <div class="card c17"><h3>🦠 Por que tantas mortes?</h3><ul>
+      <li>Indígenas <b>sem anticorpos</b> contra doenças europeias.</li>
+      <li><b>Epidemia</b>: muitos casos num lugar em pouco tempo; <b>pandemia</b>: nível mundial.</li>
+      <li>Europeus usaram <b>rivalidades entre indígenas</b> como estratégia de ocupação.</li></ul></div>
+  </div>
+
+  <div class="regua-box" style="margin-top:14px">
+    <div class="regua-tit" style="margin-bottom:6px;color:var(--ciano)">📉 População das Américas (milhões de habitantes) — gráfico da p. 50</div>
+    <div class="barras">
+      <div class="b"><span>26</span><i style="height:65%"></i></div>
+      <div class="b"><span>29</span><i style="height:72.5%"></i></div>
+      <div class="b"><span>29</span><i style="height:72.5%"></i></div>
+      <div class="b"><span>36</span><i style="height:90%"></i></div>
+      <div class="b"><span>39</span><i style="height:97.5%"></i></div>
+      <div class="b queda"><span>10</span><i style="height:25%"></i></div>
+      <div class="b queda"><span>10</span><i style="height:25%"></i></div>
+      <div class="b"><span>15</span><i style="height:37.5%"></i></div>
+      <div class="b"><span>19</span><i style="height:47.5%"></i></div>
+    </div>
+    <div class="anos"><span>1250</span><span>1300</span><span>1340</span><span>1400</span><span>1500</span><span>1600</span><span>1700</span><span>1750</span><span>1800</span></div>
+    <p class="regua-nota" style="margin-top:8px">De cerca de <b>39 milhões (1500)</b> para cerca de <b>10 milhões (1600)</b>: uma queda de uns 29 milhões, depois da chegada dos europeus.</p>
+  </div>
+
+  <div class="sec"><span class="pill c17">Capítulo 17</span><h2>🗓️ Linha do tempo da conquista espanhola</h2></div>
+  <div class="linha">
+    <div class="mk"><b class="ano">1492</b> <b>Colombo</b> chega à América Central: busca por ouro e riquezas.</div>
+    <div class="mk"><b class="ano">1503</b> Criada a <b>Casa de Contratação</b> (Sevilha): monopólio do comércio da Coroa.</div>
+    <div class="mk"><b class="ano">1519</b> <b>Hernán Cortés</b> parte de Cuba para o litoral do atual México; alianças com povos locais (guias e intérpretes).</div>
+    <div class="mk"><b class="ano">c. 1520</b> Fundado o <b>Conselho das Índias</b>, que ajuda o rei nas decisões sobre a colônia.</div>
+    <div class="mk"><b class="ano">1521</b> Exército de <b>indígenas e espanhóis</b> destrói o <b>Império Asteca</b> (Mexica).</div>
+    <div class="mk"><b class="ano">Década de 1530</b> <b>Francisco Pizarro</b>: emboscada contra o imperador inca <b>Atahualpa</b>; poder central inca destruído; fundada a Cidade dos Reis.</div>
+  </div>
+  <div class="postit">📌 <b>Dica de prova:</b> <b>C</b>ortés → <b>C</b>uba e astecas (1519–1521). <b>P</b>izarro → incas e Atahualpa (década de 1530).</div>
+
+  <div class="sec"><span class="pill c17">Capítulo 17</span><h2>🏛️ Como a Espanha administrava a colônia</h2></div>
+  <div class="org">
+    <div class="nivel"><div class="no">👑 <b>Coroa espanhola</b></div></div>
+    <div class="seta">⬇</div>
+    <div class="nivel">
+      <div class="no"><b>Casa de Contratação</b> (1503, Sevilha)<br>monopólio comercial; controlava tudo o que vinha da América</div>
+      <div class="no"><b>Conselho das Índias</b> (c. 1520)<br>ajudava o rei nas principais decisões</div>
+    </div>
+    <div class="seta">⬇</div>
+    <div class="nivel">
+      <div class="no"><b>Vice-reinos</b>: Peru, Nova Espanha, Nova Granada, Rio da Prata<br>vice-reis (elite espanhola): audiências, julgamentos, controle da produção</div>
+      <div class="no"><b>Capitanias-gerais</b>: Cuba, Guatemala, Venezuela, Chile<br>controle <b>militar e estratégico</b></div>
+    </div>
+    <div class="seta">⬇</div>
+    <div class="nivel"><div class="no"><b>Cabildo</b> (conselho municipal)<br>leis, impostos, abastecimento, policiamento e ensino</div></div>
+  </div>
+
+  <div class="sec"><span class="pill c17">Capítulo 17</span><h2>⛏️ Trabalho e produtos na América espanhola</h2></div>
+  <div class="scroll">
+  <table class="tabela">
+    <thead><tr><th> </th><th class="c17">Mita</th><th class="c17">Encomienda</th></tr></thead>
+    <tbody>
+      <tr><td><b>Origem</b></td><td>Instituição <b>inca</b>, aproveitada pelos espanhóis</td><td>Sistema dos colonizadores espanhóis</td></tr>
+      <tr><td><b>Como funcionava</b></td><td>Autoridades indígenas enviavam homens para trabalhar <b>pelo menos 4 meses</b></td><td>Indígenas trabalhavam para <b>pagar tributos</b> aos <b>encomenderos</b></td></tr>
+      <tr><td><b>Onde</b></td><td>Principalmente nas <b>minas</b></td><td>Mineração e agricultura</td></tr>
+      <tr><td><b>Detalhe</b></td><td>—</td><td>O encomendero devia <b>catequizar</b> os nativos</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="grid" style="margin-top:12px">
+    <div class="card c17"><h3>🌽 Produtos</h3><ul>
+      <li>Cultivados: <b>batata, cacau, milho, tabaco e açúcar</b>.</li>
+      <li><b>Tecidos</b> (Equador), <b>índigo/anil</b> (El Salvador), <b>algodão</b> (litoral do Peru).</li>
+      <li><b>Açúcar</b>: grandes propriedades para <b>exportação</b>, com <b>trabalho escravo</b>, como no Brasil.</li></ul></div>
+    <div class="card c17"><h3>💙 Azul índigo</h3><ul>
+      <li>Planta de clima quente; tinta azul que <b>não desbota</b>.</li>
+      <li>Maias: murais e objetos.</li>
+      <li>Europa: raro → luxo e status. Com a produção americana, ficou barato. Hoje: <b>jeans</b>.</li></ul></div>
+    <div class="card c17"><h3>📌 Síntese (p. 61)</h3><ul>
+      <li><b>Colonização espanhola</b>: grandes lucros por meio do <b>pacto colonial</b> (a Casa de Contratação garantia o monopólio da Coroa).</li>
+      <li><b>Colonização inglesa</b>: colônias <b>autônomas</b>, que desenvolveram o <b>comércio triangular</b>.</li></ul></div>
+  </div>
+  <div class="peg">⚠️ <b>Pegadinha:</b> <b>vice-reino</b> (julgamentos e produção) ≠ <b>capitania-geral</b> (militar) ≠ <b>cabildo</b> (municipal). E <b>mita</b> (inca, minas) ≠ <b>encomienda</b> (tributo + catequização).</div>
+
+  <div class="sec"><span class="pill all">Vire as cartas</span><h2>🃏 Teste-relâmpago</h2></div>
+  <div class="flips">
+    <div class="flip" onclick="this.classList.toggle('on')"><div class="inner"><div class="face front">Griô<small>quem é?</small></div><div class="face back">O contador de histórias <b>oficial</b> da comunidade; guarda a memória do povo, falando ou cantando.</div></div></div>
+    <div class="flip" onclick="this.classList.toggle('on')"><div class="inner"><div class="face front">Transaariano<small>ligava o quê?</small></div><div class="face back">O norte do Saara à <b>África Subsaariana</b>, em caravanas de <b>camelos</b>.</div></div></div>
+    <div class="flip" onclick="this.classList.toggle('on')"><div class="inner"><div class="face front">Tombuctu<small>de que império?</small></div><div class="face back"><b>Songai</b>: universidade considerada uma das primeiras do mundo.</div></div></div>
+    <div class="flip" onclick="this.classList.toggle('on')"><div class="inner"><div class="face front">Zimbo<small>o que era?</small></div><div class="face back">Concha usada como <b>moeda de troca</b> no Reino do <b>Congo</b>.</div></div></div>
+    <div class="flip" onclick="this.classList.toggle('on')"><div class="inner"><div class="face front">Fenótipo<small>o que é?</small></div><div class="face back">Características visuais: <b>cor da pele</b>, olhos, cabelo.</div></div></div>
+    <div class="flip" onclick="this.classList.toggle('on')"><div class="inner"><div class="face front">Libambo<small>para que servia?</small></div><div class="face back">Prendia os cativos <b>pelo pescoço</b> na caminhada até o litoral.</div></div></div>
+    <div class="flip" onclick="this.classList.toggle('on')"><div class="inner"><div class="face front">Tumbeiro<small>por que o nome?</small></div><div class="face back">Navio negreiro; de “<b>tumba</b>”, pelas muitas mortes.</div></div></div>
+    <div class="flip" onclick="this.classList.toggle('on')"><div class="inner"><div class="face front">Choque cultural<small>o que foi?</small></div><div class="face back">Os dois lados <b>identificaram as diferenças</b> e <b>estranharam</b> os costumes um do outro.</div></div></div>
+    <div class="flip" onclick="this.classList.toggle('on')"><div class="inner"><div class="face front">Cabildo<small>o que fazia?</small></div><div class="face back"><b>Conselho municipal</b>: leis, impostos, abastecimento, policiamento e ensino.</div></div></div>
+    <div class="flip" onclick="this.classList.toggle('on')"><div class="inner"><div class="face front">Encomienda<small>como funcionava?</small></div><div class="face back">Trabalho indígena para <b>pagar tributos</b> ao encomendero, que devia <b>catequizar</b>.</div></div></div>
+  </div>
+
+  <div class="sec"><h2>📚 Glossário</h2></div>
+  <div class="gloss">
+    <div><b>Estereótipo</b> — ideia generalizante sobre pessoas, lugares ou grupos sociais.</div>
+    <div><b>Tradição oral</b> — história e costumes transmitidos pela fala, de geração em geração.</div>
+    <div><b>Griô</b> — contador de histórias oficial de uma comunidade africana.</div>
+    <div><b>Islamização</b> — tornar pessoas ou grupos seguidores da religião islâmica.</div>
+    <div><b>Transaariano</b> — comércio que atravessava o deserto do Saara.</div>
+    <div><b>África Subsaariana</b> — parte da África ao sul do deserto do Saara.</div>
+    <div><b>Manicongo</b> — “senhor do Congo”, título do rei do Congo.</div>
+    <div><b>Zimbo</b> — concha usada como moeda de troca no Congo.</div>
+    <div><b>Jihad</b> — no livro, disputa em que a elite muçulmana de Songai tomou o poder e impôs costumes mais rígidos.</div>
+    <div><b>Fenótipo</b> — características visuais de uma pessoa (pele, olhos, cabelo).</div>
+    <div><b>Sociedade linhageira</b> — formada por pessoas com os mesmos ancestrais.</div>
+    <div><b>Libambo</b> — instrumento que prendia os cativos pelo pescoço.</div>
+    <div><b>Tumbeiro</b> — navio negreiro.</div>
+    <div><b>Comércio triangular</b> — trocas entre Europa, África e América pelo Atlântico.</div>
+    <div><b>Colonização</b> — expansão dos domínios de Estados europeus sobre outros territórios.</div>
+    <div><b>Choque cultural</b> — estranhamento mútuo entre culturas diferentes.</div>
+    <div><b>Imposição cultural</b> — forçar a própria cultura e desqualificar a do outro.</div>
+    <div><b>Ameríndio</b> — indígena nativo da América.</div>
+    <div><b>Epidemia</b> — vários casos de uma doença num lugar, em pouco tempo (pandemia = nível mundial).</div>
+    <div><b>Vice-reino</b> — grande unidade administrativa da América espanhola, governada por um vice-rei.</div>
+    <div><b>Cabildo</b> — conselho municipal da América espanhola.</div>
+    <div><b>Mita / encomienda</b> — sistemas de trabalho indígena na América espanhola.</div>
+  </div>
+
+  <div class="fim" id="fim">
+    <h3 id="fim-h3">🔒 Próxima etapa: Simulado</h3>
+    <p id="fim-txt">Role até aqui e confirme a leitura para destravar o Simulado.</p>
+    <button id="btn-li" onclick="confirmarLeitura()" disabled>✅ Li o resumo até o fim</button>
+    <a class="btn off" id="btn-prox" href="simulado.html">📝 Pronto para o Simulado!</a>
+  </div>
+
+  <div class="rodape">Feito com carinho para o jovem aprendiz. 🔥🥁🌍 Boa prova!</div>
+</div>
+
+<div class="modal-bg" id="lock">
+  <div class="modal">
+    <div class="big">🔒</div>
+    <p><b>Esta etapa ainda está trancada.</b></p>
+    <p id="lock-txt">Para abrir o Resumo, envie o Quiz.</p>
+    <a href="index.html">Voltar ao início</a>
+  </div>
+</div>
+
+<script>
+/* ====== TRILHA COM CADEADOS (módulo comum do kit) ====== */
+var KIT='roda_grio_h7';
+var TRILHA=[
+ {id:'leitura', chave:KIT+'_leitura_v1', nome:'Leitura Guiada', arquivo:'leitura-guiada.html', emoji:'📖'},
+ {id:'quiz', chave:KIT+'_quiz_v1', nome:'Quiz', arquivo:'quiz.html', emoji:'🎯'},
+ {id:'resumo', chave:KIT+'_resumo_v1', nome:'Resumo', arquivo:'resumo.html', emoji:'🗺️'},
+ {id:'simulado', chave:KIT+'_simulado_v1', nome:'Simulado', arquivo:'simulado.html', emoji:'📝'}
+];
+function lerJSON(k){ try{ var s=localStorage.getItem(k); return s?JSON.parse(s):null; }catch(e){ return null; } }
+function trilhaLiberada(){ var t=lerJSON(KIT+'_trilha_v1'); return !!(t&&t.liberadoPelosPais); }
+function etapaConcluida(id){ var e=TRILHA.filter(function(t){return t.id===id;})[0]; var d=lerJSON(e.chave); return !!(d&&d.concluido); }
+function podeAbrir(id){ var idx=TRILHA.map(function(t){return t.id;}).indexOf(id); if(idx<=0||trilhaLiberada()) return true; return etapaConcluida(TRILHA[idx-1].id); }
+function marcarNav(){
+  var links=document.querySelectorAll('#nav a[data-etapa]');
+  for(var i=0;i<links.length;i++){ var id=links[i].getAttribute('data-etapa'); if(!podeAbrir(id)){ links[i].classList.add('lock'); links[i].textContent='🔒 '+links[i].textContent.replace('🔒 ',''); } else { links[i].classList.remove('lock'); links[i].textContent=links[i].textContent.replace('🔒 ',''); } }
+}
+function checarTrava(){
+  if(podeAbrir('resumo')) return true;
+  var L=lerJSON(KIT+'_leitura_v1');
+  document.getElementById('lock-txt').textContent=(L&&L.concluido)?'Para abrir o Resumo, envie o Quiz.':'Para abrir o Resumo, conclua a Leitura Guiada e envie o Quiz.';
+  document.getElementById('lock').classList.add('show');
+  document.querySelector('.wrap').style.filter='blur(8px)';
+  document.querySelector('.wrap').setAttribute('aria-hidden','true');
+  return false;
+}
+
+/* ====== ESTADO DO RESUMO ====== */
+var CHAVE=KIT+'_resumo_v1'; var mem={}; var estado=carregar();
+function carregar(){ try{ var s=localStorage.getItem(CHAVE); if(s) return JSON.parse(s);}catch(e){ if(mem[CHAVE]) return JSON.parse(mem[CHAVE]); } return {rolagemMax:0}; }
+function salvar(){ var s=JSON.stringify(estado); try{ localStorage.setItem(CHAVE,s);}catch(e){ mem[CHAVE]=s; } document.getElementById('salvo').textContent='📜 Rolagem máxima: '+Math.round(estado.rolagemMax||0)+'%'; }
+function medirRolagem(){
+  var h=document.documentElement; var total=h.scrollHeight-h.clientHeight; var pct= total<=0?100:Math.min(100,(window.scrollY||h.scrollTop)/total*100);
+  if(pct>(estado.rolagemMax||0)){ estado.rolagemMax=pct; salvar(); }
+  var b=document.getElementById('btn-li'); if(!estado.concluido && (estado.rolagemMax||0)>=90){ b.disabled=false; }
+}
+function confirmarLeitura(){ if(estado.concluido) return; if((estado.rolagemMax||0)<90) return; estado.concluido=true; estado.concluidoEm=new Date().toISOString(); salvar(); atualizarFim(); }
+function atualizarFim(){
+  var h3=document.getElementById('fim-h3'), txt=document.getElementById('fim-txt'), b=document.getElementById('btn-li'), a=document.getElementById('btn-prox');
+  if(estado.concluido||trilhaLiberada()){ h3.textContent='✅ Resumo lido — Simulado destravado!'; txt.textContent=estado.concluido?'Agora encare o Simulado valendo, como se fosse a prova.':'Trilha liberada pelos pais.'; b.disabled=!!estado.concluido||(estado.rolagemMax||0)<90; b.textContent=estado.concluido?'✅ Resumo concluído':'✅ Li o resumo até o fim'; a.classList.remove('off'); }
+  else { h3.textContent='🔒 Próxima etapa: Simulado'; txt.textContent=(estado.rolagemMax||0)>=90?'Confirme a leitura para destravar o Simulado.':'Role até o fim da página para habilitar o botão (rolagem: '+Math.round(estado.rolagemMax||0)+'%).'; a.classList.add('off'); }
+  marcarNav();
+}
+function exportar(){ var blob=new Blob([JSON.stringify(estado,null,2)],{type:'application/json'}); var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='resumo_roda-do-grio.json'; a.click(); }
+
+if(checarTrava()){ salvar(); atualizarFim(); window.addEventListener('scroll',function(){ medirRolagem(); atualizarFim(); }); setTimeout(function(){ medirRolagem(); atualizarFim(); },300); } else { marcarNav(); }
+</script>
+</body>
+</html>

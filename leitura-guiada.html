@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leitura Guiada · Roda do Griô · História 7º</title>
+<style>
+  :root{
+    --palco:#16110d; --palco2:#231a13; --aco:#3d2e22; --aco2:#574333;
+    --ambar:#f2c14e; --ciano:#4fa3e0; --terra:#ff8a3d; --verde:#6fcf7a; --verde2:#3f8f4a;
+    --vermelho:#ef5b5b; --texto:#f6eee2; --cinza:#b8a896; --postit:#ffe88a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,Arial,sans-serif;background:
+    radial-gradient(1100px 480px at 50% -10%,#2e2117,#16110d 60%),var(--palco);
+    color:var(--texto);line-height:1.6;padding-bottom:60px}
+  header{background:linear-gradient(120deg,#13261a,#1f3a1e 55%,#3a2a12);padding:26px 18px;text-align:center;
+    box-shadow:0 4px 18px rgba(0,0,0,.5);border-bottom:4px solid var(--verde)}
+  header .selo{font-size:.78rem;letter-spacing:2px;color:#f4e6b0;text-transform:uppercase}
+  header h1{font-size:1.5rem;margin:6px 0 2px}
+  header p{color:#e2dcd0;font-size:.92rem}
+  .wrap{max-width:820px;margin:0 auto;padding:16px}
+  .barra-nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:16px 0}
+  .barra-nav a{background:var(--palco2);color:var(--texto);text-decoration:none;padding:7px 12px;
+    border-radius:20px;font-size:.85rem;border:1px solid var(--aco)}
+  .barra-nav a.on{background:var(--verde);color:#04231a;font-weight:bold}
+  .barra-nav a.lock{opacity:.5}
+  .intro{background:var(--palco2);border:1px solid var(--aco);border-radius:14px;padding:16px;margin-bottom:16px}
+  .intro h2{color:var(--verde);font-size:1.1rem;margin-bottom:8px}
+  .intro ol{margin:8px 0 0 20px}
+  .legenda{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;font-size:.8rem}
+  .legenda span{padding:3px 10px;border-radius:12px;font-weight:bold}
+  .lg-c16{background:#3d2f0e;color:var(--ambar)} .lg-c17{background:#0f2738;color:var(--ciano)}
+  .painel{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;
+    background:var(--palco2);border:1px solid var(--aco);border-radius:12px;padding:10px 14px;margin-bottom:16px;font-size:.85rem}
+  .painel .btns{display:flex;gap:6px;flex-wrap:wrap}
+  button{cursor:pointer;font-family:inherit}
+  .mini{background:var(--palco);color:var(--texto);border:1px solid var(--aco2);border-radius:8px;padding:6px 10px;font-size:.8rem}
+  .mini:hover{background:#33281e}
+  .bloco{background:var(--palco2);border:1px solid var(--aco);border-radius:16px;margin-bottom:18px;overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,.35)}
+  .bloco.travado{opacity:.55}
+  .bloco-cab{display:flex;align-items:center;gap:12px;padding:14px 16px;background:linear-gradient(90deg,#2e2218,#35271b);border-bottom:1px solid var(--aco)}
+  .bloco-cab .num{background:var(--ambar);color:#2a1700;font-weight:bold;width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .bloco.c17 .bloco-cab .num{background:var(--ciano);color:#06192b}
+  .bloco.xx .bloco-cab .num{background:var(--terra);color:#2a1004}
+  .bloco-cab h3{font-size:1.06rem;color:#fff}
+  .bloco-cab .porto{font-size:.7rem;color:var(--cinza);letter-spacing:1px;text-transform:uppercase}
+  .bloco-corpo{padding:16px}
+  .texto p{margin-bottom:10px}
+  .texto ul{margin:0 0 10px 20px}
+  .texto li{margin-bottom:5px}
+  .texto .destaque{color:var(--ambar);font-weight:bold}
+  .bloco.c17 .texto .destaque{color:var(--ciano)}
+  .bloco.xx .texto .destaque{color:var(--terra)}
+  .olhar{background:#2a2614;border-left:3px solid var(--postit);padding:8px 12px;margin:0 0 10px;border-radius:0 8px 8px 0;font-size:.92rem}
+  .olhar b{color:var(--postit)}
+  .cadeado{padding:22px 16px;text-align:center;color:var(--cinza);font-size:.9rem}
+  .perg{background:#1d1610;border:1px solid var(--aco);border-radius:12px;padding:12px;margin-top:14px}
+  .perg.red{border-color:var(--vermelho);box-shadow:0 0 0 1px var(--vermelho)}
+  .perg .tag{display:inline-block;font-size:.66rem;text-transform:uppercase;letter-spacing:1px;padding:2px 8px;border-radius:10px;margin-bottom:6px}
+  .tag.conc{background:#123a52;color:#a9d6f5}
+  .tag.apl{background:#1d4530;color:#a7e0bf}
+  .perg label{display:block;font-weight:600;margin-bottom:8px}
+  .perg textarea{width:100%;min-height:70px;background:#120d09;color:var(--texto);border:1px solid var(--aco2);border-radius:8px;padding:9px;font-family:inherit;font-size:.95rem;resize:vertical}
+  .aviso{margin-top:8px;padding:9px 11px;border-radius:8px;font-size:.85rem;display:none}
+  .aviso.amarelo{display:block;background:#4a3d12;border:1px solid var(--ambar);color:#ffe9ad}
+  .aviso.vermelho{display:block;background:#4a1717;border:1px solid var(--vermelho);color:#ffc9c9}
+  .modelo{margin-top:10px;padding:10px 12px;background:#0e2b1f;border:1px solid var(--verde);border-radius:8px;font-size:.9rem;display:none}
+  .modelo.show{display:block}
+  .modelo .lab{color:#8fe0b4;font-weight:bold;font-size:.78rem;text-transform:uppercase;letter-spacing:1px}
+  .chk{margin-top:10px;font-size:.88rem}
+  .chk .item{display:flex;align-items:center;gap:8px;margin:6px 0;flex-wrap:wrap}
+  .chk .item span{flex:1;min-width:180px}
+  .chk .simnao button{border:1px solid var(--aco2);background:#120d09;color:var(--texto);border-radius:6px;padding:4px 10px;margin-left:4px;font-size:.8rem}
+  .chk .simnao button.sim.ativo{background:var(--verde);border-color:var(--verde);color:#04231a}
+  .chk .simnao button.nao.ativo{background:var(--vermelho);border-color:var(--vermelho);color:#fff}
+  .conferir{margin-top:14px;background:var(--verde);color:#04231a;border:none;border-radius:10px;padding:11px 18px;font-size:1rem;font-weight:bold;width:100%}
+  .conferir:disabled{background:#33281e;color:#8a7a68;cursor:not-allowed}
+  .status-bloco{margin-top:10px;text-align:center;font-weight:bold;font-size:.95rem}
+  .prox{margin-top:12px;text-align:center}
+  .prox a{color:var(--verde);text-decoration:none;font-weight:bold}
+  .peg{background:#3a1414;border:2px solid var(--vermelho);border-radius:16px;padding:16px;margin-top:20px}
+  .peg h3{color:#ffb3b3;margin-bottom:10px}
+  .peg ol{margin-left:20px}
+  .peg li{margin-bottom:7px}
+  .cobertura{background:var(--palco2);border:1px solid var(--aco);border-radius:16px;padding:16px;margin-top:18px}
+  .cobertura h3{color:var(--verde);margin-bottom:10px}
+  table{width:100%;border-collapse:collapse;font-size:.85rem}
+  th,td{border:1px solid var(--aco);padding:7px 9px;text-align:left}
+  th{background:#2e2218}
+  .revisar{background:#3a2e06;border:2px solid var(--ambar);border-radius:16px;padding:16px;margin-top:18px}
+  .revisar h3{color:var(--ambar);margin-bottom:8px}
+  .revisar ul{margin-left:18px}
+  .relatorio{background:var(--palco2);border:1px dashed var(--verde);border-radius:14px;padding:16px;margin-top:18px;font-size:.9rem}
+  .relatorio h3{color:var(--verde);margin-bottom:8px}
+  .trilha-fim{background:linear-gradient(120deg,#122a1f,#163a2a);border:2px solid var(--verde);border-radius:16px;padding:18px;margin-top:18px;text-align:center}
+  .trilha-fim h3{color:#8fe0b4;margin-bottom:8px}
+  .trilha-fim a.btn{display:inline-block;margin-top:8px;background:var(--verde);color:#04231a;text-decoration:none;font-weight:bold;padding:11px 20px;border-radius:10px}
+  .trilha-fim a.btn.off{background:#33281e;color:#8a7a68;pointer-events:none}
+  .modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:50;align-items:center;justify-content:center;padding:16px}
+  .modal-bg.show{display:flex}
+  .modal{background:var(--palco2);border:1px solid var(--verde);border-radius:14px;padding:20px;max-width:420px;text-align:center}
+  .modal p{margin-bottom:14px}
+  .modal button{background:var(--verde);color:#04231a;border:none;border-radius:8px;padding:9px 16px;font-weight:bold}
+  .rodape{text-align:center;color:var(--cinza);font-size:.8rem;margin-top:24px}
+  h1,h2,h3{font-family:'Palatino Linotype','Book Antiqua',Palatino,serif;letter-spacing:.3px}
+  .fita{height:14px;background-color:#16110d;background-image:linear-gradient(135deg,#f2c14e 25%,transparent 25%),linear-gradient(225deg,#f2c14e 25%,transparent 25%),linear-gradient(315deg,#ff8a3d 25%,transparent 25%),linear-gradient(45deg,#ff8a3d 25%,transparent 25%);background-size:20px 14px;background-position:-10px 0,-10px 0,0 0,0 0;box-shadow:0 3px 8px rgba(0,0,0,.45)}
+  .tag.conc{background:#123a52;color:#a9d6f5}
+</style>
+</head>
+<body>
+<header>
+  <div class="selo">Roda do Griô · História 7º ano · CCF</div>
+  <h1>📖 Leitura Guiada — As Rodas do Griô</h1>
+  <p>Capítulo 16 (África) e Capítulo 17 (Nativos e colonos na América, pp. 48–54 + p. 61) · Prova 03/11 · Callis História 7 – Livro 2</p>
+</header>
+<div class="fita"></div>
+
+<div class="wrap">
+  <nav class="barra-nav" id="nav">
+    <a class="on" href="leitura-guiada.html">📖 Leitura Guiada</a>
+    <a href="quiz.html" data-etapa="quiz">🎯 Quiz</a>
+    <a href="resumo.html" data-etapa="resumo">🗺️ Resumo</a>
+    <a href="simulado.html" data-etapa="simulado">📝 Simulado</a>
+    <a href="index.html">🏠 Início</a>
+  </nav>
+
+  <div class="intro">
+    <h2>🔥 Sente-se na roda, jovem aprendiz</h2>
+    <p>Em muitas comunidades africanas, alguém chamava <b>“Vamos ouvir, vamos ouvir!”</b> e todos se reuniam para escutar o <b>griô</b>, o contador de histórias oficial. Aqui é igual: cada bloco é uma <b>Roda</b> de histórias. As <b>8 primeiras</b> acontecem do lado africano do Atlântico (Capítulo 16, <i>África</i>) e as <b>4 últimas</b> atravessam o oceano até a América (Capítulo 17, <i>Nativos e colonos na América</i>). A próxima roda só abre quando você conferir a anterior.</p>
+    <ol>
+      <li>Leia a roda com calma (tudo aqui vem do seu livro).</li>
+      <li>Responda as 3 perguntas <b>escrevendo</b> com as suas palavras (não vale copiar o texto).</li>
+      <li>Clique em <b>Conferir</b>: aparece a resposta-modelo e uma autoavaliação Sim/Não.</li>
+      <li>Com as 12 rodas conferidas e a autoavaliação respondida, o <b>🎯 Quiz destrava</b>.</li>
+    </ol>
+    <div class="legenda"><span class="lg-c16">🌍 Capítulo 16 = África</span><span class="lg-c17">⚓ Capítulo 17 = América (pp. 48–54 e Síntese)</span></div>
+  </div>
+
+  <div class="painel">
+    <span id="salvo">💾 Progresso salvo automaticamente.</span>
+    <div class="btns">
+      <button class="mini" onclick="exportar()">📥 Exportar</button>
+      <button class="mini" onclick="document.getElementById('imp').click()">📤 Importar</button>
+      <input type="file" id="imp" accept="application/json" style="display:none" onchange="importar(event)">
+      <button class="mini" onclick="pedirZerar()">🗑️ Zerar tudo</button>
+    </div>
+  </div>
+
+  <div id="blocos"></div>
+
+  <div class="peg">
+    <h3>⚠️ 12 Pegadinhas da Prova (não caia nelas!)</h3>
+    <ol>
+      <li><b>A África não é um país.</b> É um continente com 54 países — por isso o livro fala em “várias Áfricas”.</li>
+      <li><b>Saara:</b> popularmente “o maior e mais quente”, mas em <b>extensão</b> é o <b>3º</b> deserto do mundo (atrás da Antártica e da Tundra do Ártico). O <b>Kalahari</b> fica na África <b>Austral</b>.</li>
+      <li><b>Transaariano ≠ triangular.</b> O transaariano atravessava o Saara (norte ↔ sul do deserto, caravanas de camelos). O triangular ligava Europa, África e América pelo Atlântico (navios).</li>
+      <li><b>Ordem dos reinos do Níger:</b> Gana → Mali → Songai. A universidade de <b>Tombuctu</b> é de <b>Songai</b>. No Mali, o islamismo virou oficial, mas as religiões tradicionais eram <b>toleradas</b>.</li>
+      <li><b>Gana:</b> o imperador dominava as <b>pessoas</b>, e não necessariamente o território.</li>
+      <li><b>Zimbo é do Congo, não do Zimbábue!</b> Zimbo = concha-moeda; manicongo = rei do Congo; o rei batizado = D. João I.</li>
+      <li><b>Escravidão antes dos europeus existia</b>, mas por dívida ou guerra, <b>sem relação com o fenótipo</b>. Com os portugueses, passou a ser pela <b>cor da pele</b>.</li>
+      <li><b>Tumbeiro</b> vem de “tumba” (as mortes na travessia). <b>Libambo</b> prendia os cativos pelo pescoço na caminhada até o litoral.</li>
+      <li><b>Rotas na ordem:</b> Senegâmbia e Alta Guiné → Congo → Costa da Mina (Golfo de Benin = Costa dos Escravos). No Brasil: principalmente <b>Rio de Janeiro e Bahia</b>.</li>
+      <li><b>“Encontro pacífico”</b> é a imagem dos artistas e da carta de Caminha. O livro fala em <b>desencontro</b>: choque cultural, imposição cultural e genocídio.</li>
+      <li><b>Doenças:</b> varíola, sarampo e gripe — os indígenas não tinham anticorpos. E o exército que destruiu os astecas tinha <b>indígenas</b> aliados dos espanhóis!</li>
+      <li><b>Não troque:</b> Cortés → astecas (saiu de Cuba em 1519; 1521). Pizarro → incas (década de 1530, Atahualpa). Casa de Contratação (1503, Sevilha, monopólio) ≠ Conselho das Índias (c. 1520, ajudava o rei). Vice-reino ≠ capitania-geral (militar) ≠ cabildo (municipal). Mita = inca/minas; encomienda = tributo + catequização.</li>
+    </ol>
+  </div>
+
+  <div class="cobertura">
+    <h3>🧭 Cobertura: Tópico → Roda</h3>
+    <table>
+      <thead><tr><th>Tópico da prova</th><th>Páginas (Callis História 7 – L2)</th><th>Roda</th></tr></thead>
+      <tbody>
+        <tr><td>África não é país; estereótipos; viajantes antigos e medievais; interpretação equivocada da Bíblia (Caim); iluministas (Montesquieu, Kant, Hume); Alberto Costa e Silva; “África branca × África negra”</td><td>24-27, 38</td><td>1</td></tr>
+        <tr><td>Fontes africanas e tradição oral; comunidades autônomas; “Vamos ouvir”; griôs</td><td>28</td><td>2</td></tr>
+        <tr><td>As várias Áfricas: 54 países, idiomas, paisagens, desertos (Saara e Kalahari), rios, subdivisões; berberes, bantos e iorubás</td><td>29-30</td><td>3</td></tr>
+        <tr><td>Norte da África: islã (séc. VII), islamização, berberes, comércio transaariano</td><td>30</td><td>4</td></tr>
+        <tr><td>Reinos da curva do Níger: Gana, Mali e Songai (jihad, Tombuctu)</td><td>31-33</td><td>5</td></tr>
+        <tr><td>Reinos subsaarianos: Grande Zimbábue, Monomotapa e Congo (manicongo, zimbo, D. João I)</td><td>33</td><td>6</td></tr>
+        <tr><td>Escravidão na África antes e depois dos europeus; fenótipo; sociedades linhageiras</td><td>34, 41-42</td><td>7</td></tr>
+        <tr><td>Comércio atlântico: motivos, comércio triangular, libambo, tumbeiros, números, rotas, Porta do Não Retorno, desembarque no Brasil, herança africana</td><td>34-37, 42</td><td>8</td></tr>
+        <tr><td>Encontros ou desencontros? Renascimento, reformas religiosas, colonização, choque cultural, carta de Caminha</td><td>46-49</td><td>9</td></tr>
+        <tr><td>Imposição cultural, genocídio, doenças e anticorpos, epidemia/pandemia, alianças com indígenas, gráfico da população; Síntese</td><td>50, 61</td><td>10</td></tr>
+        <tr><td>Conquista espanhola (Colombo, Cortés, Pizarro) e administração (Casa de Contratação, Conselho das Índias, vice-reinos, capitanias-gerais, cabildo)</td><td>51-53</td><td>11</td></tr>
+        <tr><td>Mita, encomienda, produtos da América espanhola, índigo; Síntese (pacto colonial × colônias autônomas)</td><td>54, 61</td><td>12</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="revisar" id="revisar" style="display:none">
+    <h3>🔁 Para revisar antes da prova</h3>
+    <ul id="revisar-lista"></ul>
+  </div>
+
+  <div class="relatorio">
+    <h3>📊 Para os pais (resumo desta leitura)</h3>
+    <div id="rel-conteudo">Assim que o aprendiz for conferindo as rodas, o resumo aparece aqui.</div>
+  </div>
+
+  <div class="trilha-fim" id="trilha-fim">
+    <h3>🔒 Próxima etapa: Quiz</h3>
+    <p id="trilha-fim-txt">O Quiz destrava quando as 12 rodas estiverem conferidas e a autoavaliação respondida.</p>
+    <a class="btn off" id="btn-prox" href="quiz.html">🎯 Ir para o Quiz</a>
+  </div>
+
+  <div class="rodape">Feito com carinho para o jovem aprendiz. 🔥🥁🌍 Boa prova!</div>
+</div>
+
+<div class="modal-bg" id="modal">
+  <div class="modal">
+    <p id="modal-txt"></p>
+    <button onclick="fecharModal()" id="modal-ok">Ok</button>
+    <button class="mini" onclick="fecharModal()" id="modal-cancel" style="display:none;margin-left:8px">Cancelar</button>
+  </div>
+</div>
+
+<script>
+/* ====== TRILHA COM CADEADOS (módulo comum do kit) ====== */
+var KIT='roda_grio_h7';
+var TRILHA=[
+ {id:'leitura', chave:KIT+'_leitura_v1', nome:'Leitura Guiada', arquivo:'leitura-guiada.html', emoji:'📖'},
+ {id:'quiz', chave:KIT+'_quiz_v1', nome:'Quiz', arquivo:'quiz.html', emoji:'🎯'},
+ {id:'resumo', chave:KIT+'_resumo_v1', nome:'Resumo', arquivo:'resumo.html', emoji:'🗺️'},
+ {id:'simulado', chave:KIT+'_simulado_v1', nome:'Simulado', arquivo:'simulado.html', emoji:'📝'}
+];
+function lerJSON(k){ try{ var s=localStorage.getItem(k); return s?JSON.parse(s):null; }catch(e){ return null; } }
+function trilhaLiberada(){ var t=lerJSON(KIT+'_trilha_v1'); return !!(t&&t.liberadoPelosPais); }
+function etapaConcluida(id){ var e=TRILHA.filter(function(t){return t.id===id;})[0]; var d=lerJSON(e.chave); return !!(d&&d.concluido); }
+function podeAbrir(id){ var idx=TRILHA.map(function(t){return t.id;}).indexOf(id); if(idx<=0||trilhaLiberada()) return true; return etapaConcluida(TRILHA[idx-1].id); }
+function marcarNav(){
+  var links=document.querySelectorAll('#nav a[data-etapa]');
+  for(var i=0;i<links.length;i++){ var id=links[i].getAttribute('data-etapa'); if(!podeAbrir(id)){ links[i].classList.add('lock'); links[i].textContent='🔒 '+links[i].textContent.replace('🔒 ',''); links[i].setAttribute('title','Ainda trancado'); } else { links[i].classList.remove('lock'); links[i].textContent=links[i].textContent.replace('🔒 ',''); } }
+}
+
+/* ====== RODAS (conteúdo do livro Callis História 7 L2 — Cap. 16 e Cap. 17) ====== */
+var BLOCOS = [
+ {
+  "porto": "Roda 1 · Capítulo 16 · pp. 24-27 e 38",
+  "emoji": "🌍",
+  "u": "c16",
+  "titulo": "Desfazendo preconceitos sobre a África",
+  "texto": [
+   "Muita gente ainda pensa que a África é um <b>país</b> — e não é: é um <span class='destaque'>continente</span>. A abertura do capítulo propõe falar em <b>“várias Áfricas”</b>, porque ali existe uma diversidade enorme de paisagens, culturas e povos. O texto critica a visão de que no continente só existiriam fome, miséria e bichos ferozes.",
+   "Essa visão nasce de <span class='destaque'>estereótipos</span> — ideias que generalizam pessoas, lugares ou grupos, como se todos fossem iguais. Alguns filmes estadunidenses e europeus mostram uma África “exótica”, cheia de clichês. Outras pessoas só enxergam pobreza e vida rural e esquecem os muitos recursos naturais (que quase nunca viram melhoria de vida para os trabalhadores) e as cidades modernas, como <b>Nairóbi</b>, capital do Quênia.",
+   "Os preconceitos são antigos. Na <b>Antiguidade e na Idade Média</b>, viajantes europeus descreviam os africanos como inferiores, bárbaros, não civilizados e praticantes de feitiçaria. Com base numa <b>interpretação equivocada da Bíblia</b>, espalhou-se a ideia de que os africanos descendiam de <b>Caim</b> e que a cor da pele seria a marca de uma maldição — e missionários foram mandados para “salvá-los”.",
+   "Até filósofos iluministas do século XVIII, como <b>Montesquieu</b>, Kant e Hume, escreveram frases preconceituosas. Montesquieu chegou a justificar a escravidão dizendo que, sem escravizados, o açúcar das colônias ficaria caro. Para o livro, isso mostra os <b>limites do Iluminismo</b> quanto à igualdade e as bases racistas do pensamento europeu daquela época.",
+   "<div class='olhar'><b>Conheça o historiador:</b> Alberto Costa e Silva (1931-2023), o maior especialista brasileiro em África, alerta que a história africana costuma ser contada só pela escravidão e pelo tráfico — temas importantes (ajudam a entender o racismo de hoje), mas que não resumem o continente. Outro alerta do capítulo: separar o continente em “África branca” (norte) e “África negra” (sul do Saara) é uma classificação <b>racista e ideológica</b>.</div>"
+  ],
+  "perguntas": [
+   {
+    "tag": "conc",
+    "q": "O que é um estereótipo? Dê um exemplo de estereótipo sobre a África que o livro critica.",
+    "modelo": "Estereótipo é uma ideia que generaliza um grupo, um lugar ou um povo, como se todos fossem iguais. Exemplo: achar que a África é um país só de pobreza, fome e bichos selvagens, ou o jeito “exótico” com que alguns filmes mostram o continente.",
+    "chk": [
+     "Expliquei que estereótipo é uma ideia que generaliza?",
+     "Dei um exemplo ligado à África (país, pobreza, filmes, bichos)?"
+    ]
+   },
+   {
+    "tag": "apl",
+    "q": "Um colega diz: “Vou viajar para a África e lá só tem savana e animal selvagem”. Como você corrigiria esse colega em duas frases, usando o que leu?",
+    "modelo": "Eu diria que a África não é um país, é um continente enorme e muito diverso, que também tem cidades grandes e modernas, como Nairóbi. Esse jeito de ver a África é um estereótipo, muitas vezes espalhado por filmes.",
+    "chk": [
+     "Disse que a África é um continente (não um país) e diverso?",
+     "Citei as cidades modernas ou chamei a fala de estereótipo?"
+    ]
+   },
+   {
+    "tag": "apl",
+    "q": "Montesquieu dizia que o açúcar ficaria caro sem o trabalho de escravizados. Explique, com as suas palavras, que interesse estava por trás dessa “justificativa”.",
+    "modelo": "Por trás estava o interesse econômico dos europeus: as colônias produziam açúcar com trabalho escravo e davam muito lucro. Para defender esse comércio, espalhavam a ideia de que os africanos eram inferiores.",
+    "chk": [
+     "Liguei a justificativa ao lucro/comércio das colônias europeias?",
+     "Disse que a ideia de inferioridade servia para defender a escravidão?"
+    ]
+   }
+  ]
+ },
+ {
+  "porto": "Roda 2 · Capítulo 16 · p. 28",
+  "emoji": "🔥",
+  "u": "c16",
+  "titulo": "A voz que guarda a história: tradição oral e griôs",
+  "texto": [
+   "Se muitos relatos europeus sobre a África vinham cheios de preconceito, como conhecer a história do continente “por dentro”? O livro mostra que podemos usar <b>documentos produzidos pelos próprios africanos</b> e os relatos da <span class='destaque'>tradição oral</span> — a história que passa de boca em boca.",
+   "Cada civilização africana tem as próprias tradições, regras, cultura e organização política: as comunidades são <b>autônomas</b> e vivem do seu jeito. Para passar esse legado aos mais novos, alguém chamava <b>“Vamos ouvir, vamos ouvir”</b>, e o grupo se reunia para ouvir as histórias.",
+   "Qualquer pessoa pode contar histórias, mas cada comunidade tem o seu contador oficial: o <span class='destaque'>griô</span>. Homens e mulheres griôs guardam e transmitem as memórias, as tradições e os fatos históricos do seu povo, em narrativas <b>faladas ou cantadas</b> (as cantadas ficam com os griôs músicos).",
+   "Graças a essa prática, hoje conseguimos conhecer o continente africano <b>sem depender só da visão distorcida</b> dos europeus. É por isso que este kit é uma roda de histórias em volta da fogueira: aqui, quem conduz é o griô.",
+   "<div class='olhar'><b>Imagem do livro:</b> uma ilustração de 1890 mostra os griôs de Sambala, do povo fula (Mali).</div>"
+  ],
+  "perguntas": [
+   {
+    "tag": "conc",
+    "q": "Quem é o griô e qual é o papel dele na comunidade?",
+    "modelo": "O griô é o contador de histórias oficial da comunidade. É ele quem guarda a memória e os costumes do povo e conta tudo para os mais novos, falando ou cantando, para nada se perder.",
+    "chk": [
+     "Disse que é o contador de histórias oficial?",
+     "Disse que ele preserva/transmite memórias e tradições (falando ou cantando)?"
+    ]
+   },
+   {
+    "tag": "apl",
+    "q": "Pense na sua família: uma receita, uma música ou uma história que passa dos avós para os netos sem estar escrita. Por que isso se parece com a tradição oral africana?",
+    "modelo": "Porque é um conhecimento que passa de geração em geração pela fala (ou pelo canto), sem livro. Como faz o griô, alguém mais velho conta e os mais novos guardam, e a tradição não se perde.",
+    "chk": [
+     "Dei um exemplo da minha vida?",
+     "Expliquei que passa de geração em geração pela fala?"
+    ]
+   },
+   {
+    "tag": "apl",
+    "q": "Por que a tradição oral ajuda a corrigir a imagem que os europeus espalharam sobre a África? Explique como se fosse para um colega mais novo.",
+    "modelo": "Porque ela é a história contada pelos próprios africanos. Os relatos europeus muitas vezes tinham preconceito; ouvindo os griôs, a gente conhece o que os povos africanos contam de si mesmos.",
+    "chk": [
+     "Disse que é a versão dos próprios africanos?",
+     "Disse que os relatos europeus tinham preconceito/distorção?"
+    ]
+   }
+  ]
+ },
+ {
+  "porto": "Roda 3 · Capítulo 16 · pp. 29-30",
+  "emoji": "🌄",
+  "u": "c16",
+  "titulo": "As várias Áfricas: paisagens e povos",
+  "texto": [
+   "A África é um continente enorme e muito diverso: hoje tem <b>54 países</b>, que juntos somam <b>mais de 1 bilhão de habitantes</b>, e <b>mais de mil idiomas e dialetos</b>. As paisagens incluem <b>savanas, estepes e florestas tropicais</b>.",
+   "Há dois grandes desertos: o <b>Kalahari</b>, na África Austral, e o <b>Saara</b>, no norte, conhecido popularmente como o maior e mais quente do mundo. Atenção: em extensão, o Saara é o <b>terceiro maior deserto</b> — perde para a Antártica e para a Tundra do Ártico. Rios importantes cortam o continente: <b>Níger, Congo, Zambeze e Nilo</b>.",
+   "O mapa do livro mostra as subdivisões atuais do continente: <b>Norte da África, África Ocidental, África Central, África Oriental e África Austral</b>.",
+   "Além das paisagens, há diferentes culturas, artes, religiões, economias, sistemas políticos, idiomas e costumes. Por isso a África <b>não é um território homogêneo</b> (igual em tudo). O livro cita alguns povos: os <b>berberes</b> (norte da África), os <b>bantos</b> (África Subsaariana, ao sul do Saara) e os <b>iorubás</b> (África Ocidental)."
+  ],
+  "perguntas": [
+   {
+    "tag": "conc",
+    "q": "Cite três dados do livro que provam que a África não é um território homogêneo.",
+    "modelo": "Ela tem 54 países, mais de mil idiomas e dialetos e paisagens diferentes, como savanas, estepes, florestas tropicais e desertos. Também tem povos diferentes, como berberes, bantos e iorubás.",
+    "chk": [
+     "Citei pelo menos três dados (países, idiomas, paisagens, povos)?",
+     "Liguei esses dados à ideia de diversidade?"
+    ]
+   },
+   {
+    "tag": "apl",
+    "q": "Uma reportagem diz: “O Saara é o maior deserto do mundo em extensão”. Segundo o livro, essa frase está certa? Explique.",
+    "modelo": "Não. Ele é famoso como o maior e o mais quente, mas em tamanho fica em 3º lugar: a Antártica e a Tundra do Ártico são maiores.",
+    "chk": [
+     "Disse que a frase está errada?",
+     "Citei que ele é o 3º, atrás da Antártica e da Tundra do Ártico?"
+    ]
+   },
+   {
+    "tag": "apl",
+    "q": "Ligue cada povo à sua região: berberes, bantos e iorubás. Depois invente uma frase sua usando a palavra “homogêneo” para falar da África.",
+    "modelo": "Berberes: norte da África. Bantos: África Subsaariana (ao sul do Saara). Iorubás: África Ocidental. Frase: “A África não é homogênea, porque cada região tem povos, línguas e paisagens diferentes.”",
+    "chk": [
+     "Liguei os três povos às regiões certas?",
+     "Escrevi uma frase com “homogêneo” que faz sentido?"
+    ]
+   }
+  ]
+ },
+ {
+  "porto": "Roda 4 · Capítulo 16 · p. 30",
+  "emoji": "🐪",
+  "u": "c16",
+  "titulo": "Norte da África: islã e o comércio que cruzava o deserto",
+  "texto": [
+   "Na Idade Média, o norte da África foi dominado pelos <b>muçulmanos</b>. Por volta do <b>século VII</b>, os <b>árabes</b> invadiram várias regiões do continente. No começo, africanos dominados passaram a lutar como mercenários nos exércitos islâmicos.",
+   "Aos poucos aconteceu a <span class='destaque'>islamização</span> — o processo de tornar pessoas ou grupos seguidores da religião islâmica. Os árabes conquistaram os <b>berberes</b>, tribos nômades do deserto do Saara, e passaram a dominar a região.",
+   "Surgiu então um comércio intenso, chamado <span class='destaque'>transaariano</span>: ele ligava os povos que viviam ao norte do deserto aos que viviam ao sul, na <b>África Subsaariana</b>. As caravanas usavam <b>camelos</b>, escolhidos pela resistência, e levavam <b>ouro, sal, cobre, artesanato, temperos e pedras preciosas</b>.",
+   "<div class='olhar'><b>Truque de memória:</b> trans = “através de”. O comércio <b>trans</b>-<b>saariano</b> é o que atravessa o Saara. Ele aproximou os reinos africanos — o assunto da próxima roda.</div>"
+  ],
+  "perguntas": [
+   {
+    "tag": "conc",
+    "q": "O que foi o comércio transaariano? Cite três produtos que ele levava.",
+    "modelo": "Foi o comércio que atravessava o deserto do Saara, ligando os povos do norte da África aos povos ao sul do deserto (África Subsaariana). As caravanas de camelos levavam, por exemplo, ouro, sal e temperos.",
+    "chk": [
+     "Disse que ligava o norte e o sul do Saara?",
+     "Citei três produtos certos?"
+    ]
+   },
+   {
+    "tag": "apl",
+    "q": "Por que os comerciantes escolhiam camelos, e não outro animal, para atravessar o Saara? Use a pista que o livro dá e pense nas condições do deserto.",
+    "modelo": "Porque o livro diz que os camelos eram usados pela resistência. No deserto, com calor forte e pouca água, só um animal muito resistente aguenta uma viagem tão longa.",
+    "chk": [
+     "Citei a resistência do camelo?",
+     "Liguei isso às condições difíceis do deserto?"
+    ]
+   },
+   {
+    "tag": "apl",
+    "q": "Explique, com um exemplo inventado, o que significa “islamização”.",
+    "modelo": "Islamização é quando pessoas ou grupos passam a seguir a religião islâmica. Exemplo: um povo que tinha a sua religião tradicional passa, depois da chegada dos árabes, a seguir o islamismo.",
+    "chk": [
+     "Expliquei que é passar a seguir o islamismo?",
+     "Dei um exemplo?"
+    ]
+   }
+  ]
+ },
+ {
+  "porto": "Roda 5 · Capítulo 16 · pp. 31-33",
+  "emoji": "👑",
+  "u": "c16",
+  "titulo": "Os reinos da curva do Rio Níger: Gana, Mali e Songai",
+  "texto": [
+   "O comércio feito pelos árabes aproximou os reinos africanos. Três deles ficavam na <b>curva do Rio Níger</b>: <b>Gana, Mali e Songai</b>.",
+   "<b>Gana</b> ficava entre os atuais Mali e Mauritânia e viveu seu auge entre os <b>séculos VIII e XIII</b>. Ali viviam berberes que criavam carneiros e bois, e a região era rica em <b>ouro e ferro</b> — com o ferro se faziam espadas e lanças, formando um exército poderoso. O imperador governava as <b>pessoas</b>, e não necessariamente o território; também fazia a justiça e defendia o império. Os dirigentes geralmente eram do povo <b>soniquê</b>.",
+   "O <b>Mali</b> sucedeu Gana e durou até o <b>século XVI</b>. Ganhou importância por controlar o comércio de <b>ouro</b> e de <b>pessoas escravizadas</b>. Chefes locais governavam as partes do império, a população pagava impostos ao imperador e o exército era formado por cativos. O imperador tinha contato com egípcios, europeus e muçulmanos; depois que ele se converteu, o <b>islamismo virou religião oficial</b>, mas as religiões tradicionais continuaram toleradas. O império caiu por <b>disputas internas pelo trono</b>.",
+   "Com o declínio do Mali, <b>Songai</b> venceu as disputas. Destacou-se pelo trabalho de agricultores escravizados e pelo comércio de <b>ouro e sal</b>; tinha imperador, ministros e um <b>exército profissional</b>. Cada povo dominado mantinha seus costumes, mas a elite muçulmana passou a questionar as religiões tradicionais e fez uma <b>jihad</b> — uma disputa em que tomou o poder e impôs costumes mais rígidos. Em <b>Tombuctu</b> foi criada uma universidade considerada <b>uma das primeiras do mundo</b>."
+  ],
+  "perguntas": [
+   {
+    "tag": "conc",
+    "q": "Escolha um dos três reinos da curva do Níger e explique o que fazia dele um reino forte.",
+    "modelo": "Gana: tinha ouro e ferro; com o ferro fazia armas e formava um exército poderoso. (Ou Mali: controlava o comércio de ouro e de escravizados e cobrava impostos. Ou Songai: comércio de ouro e sal e exército profissional.)",
+    "chk": [
+     "Escolhi um reino e disse de onde vinha a força dele?",
+     "As informações combinam com o reino escolhido?"
+    ]
+   },
+   {
+    "tag": "apl",
+    "q": "Monte uma linha do tempo com os três reinos, na ordem em que foram mais fortes, e escreva uma frase explicando a passagem de um para outro.",
+    "modelo": "Gana (auge nos séculos VIII a XIII) → Mali (sucedeu Gana, até o século XVI) → Songai. Quando o Mali entrou em declínio por disputas internas pelo trono, vários povos disputaram a região e Songai venceu.",
+    "chk": [
+     "Coloquei na ordem Gana → Mali → Songai?",
+     "Expliquei pelo menos uma passagem (ex.: o Mali caiu por disputas pelo trono e Songai venceu)?"
+    ]
+   },
+   {
+    "tag": "apl",
+    "q": "Imagine que você é um griô de Tombuctu. Conte em 2 ou 3 frases por que a sua cidade é motivo de orgulho.",
+    "modelo": "Tombuctu foi uma das cidades mais importantes do Império Songai. Ali existiu uma universidade que é vista como uma das primeiras do mundo, e dela saíram pessoas que espalharam o islamismo pelo oeste da África.",
+    "chk": [
+     "Citei a universidade (uma das primeiras do mundo)?",
+     "Liguei Tombuctu ao Império Songai?"
+    ]
+   }
+  ]
+ },
+ {
+  "porto": "Roda 6 · Capítulo 16 · p. 33",
+  "emoji": "🐚",
+  "u": "c16",
+  "titulo": "Reinos do sul: Grande Zimbábue, Monomotapa e Congo",
+  "texto": [
+   "Abaixo do Saara, na <b>África Subsaariana</b>, destacavam-se três reinos: <b>Grande Zimbábue, Monomotapa e Congo</b>.",
+   "O <b>Grande Zimbábue</b> se destacava por controlar o <b>ouro</b> vendido na região do atual Moçambique. Entrou em declínio quando o comércio foi <b>desviado para o norte</b> da África. Com isso o <b>Monomotapa</b> cresceu: lá o soberano ficava no topo da corte e era visto como <b>um deus ou descendente dos deuses</b>, e controlava o comércio de sal, ouro, cobre e marfim. Ele decaiu entre o fim do século XVI e o século XVII, principalmente pela ação dos <b>portugueses</b>, que tinham chegado no fim do século XV.",
+   "O <b>Reino do Congo</b> surgiu no <b>século XIV</b>, liderado por um rei chamado <span class='destaque'>manicongo</span> (“senhor do Congo”). No começo, destacou-se pelo <span class='destaque'>zimbo</span>, uma concha usada como <b>moeda de troca</b>. Quando os portugueses chegaram, cresceu muito o <b>comércio de pessoas escravizadas</b>, trocadas por produtos como <b>armas de fogo</b>.",
+   "A relação com Portugal não foi só comercial: houve também <b>alianças diplomáticas e religiosas</b>. O rei do Congo se converteu ao cristianismo e foi batizado com o nome europeu <b>D. João I</b>. Assim, as crenças cristãs se <b>misturaram</b> com rituais das religiões tradicionais."
+  ],
+  "perguntas": [
+   {
+    "tag": "conc",
+    "q": "Quem era o manicongo e o que era o zimbo?",
+    "modelo": "Manicongo era o título do rei do Congo e quer dizer “senhor do Congo”. O zimbo era uma concha usada como moeda de troca no Reino do Congo.",
+    "chk": [
+     "Disse que manicongo era o rei (“senhor do Congo”)?",
+     "Disse que o zimbo era uma concha usada como moeda?"
+    ]
+   },
+   {
+    "tag": "apl",
+    "q": "O Grande Zimbábue perdeu força e o Monomotapa cresceu. Explique essa “troca de lugar” como se fosse uma notícia de jornal da época (2 ou 3 frases).",
+    "modelo": "Notícia: o comércio do ouro mudou de rumo e foi desviado para o norte da África, e o Grande Zimbábue perdeu sua principal riqueza. Aproveitando a mudança, o Monomotapa cresceu, porque passou a controlar a venda de produtos como ouro e marfim.",
+    "chk": [
+     "Disse que o declínio do Grande Zimbábue veio do desvio do comércio para o norte?",
+     "Disse que o Monomotapa cresceu controlando o comércio?"
+    ]
+   },
+   {
+    "tag": "apl",
+    "q": "O Congo e Portugal tiveram três tipos de relação. Cite os três e dê um exemplo de cada.",
+    "modelo": "Comercial: troca de pessoas escravizadas por armas de fogo e outros produtos. Diplomática: alianças entre os chefes africanos e os portugueses. Religiosa: o rei do Congo virou cristão e recebeu no batismo o nome de D. João I.",
+    "chk": [
+     "Citei comercial, diplomática e religiosa?",
+     "Dei um exemplo para cada uma?"
+    ]
+   }
+  ]
+ },
+ {
+  "porto": "Roda 7 · Capítulo 16 · pp. 34, 41-42",
+  "emoji": "⛓️",
+  "u": "c16",
+  "titulo": "Escravidão na África: antes e depois dos europeus",
+  "texto": [
+   "Pesquisas indicam que, <b>antes</b> da chegada dos europeus, já havia escravização de pessoas na África. Mas ela acontecia como <b>pagamento de dívidas</b> ou como <b>espólio de guerra</b> (prisioneiros), e <b>não era determinada pelo fenótipo</b> — o conjunto de características visuais de uma pessoa, como a cor da pele, o formato e a cor dos olhos e o tipo de cabelo.",
+   "Com o aumento do comércio transaariano, os árabes passaram a <b>vender ou trocar</b> pessoas escravizadas por produtos. Nas <span class='destaque'>sociedades linhageiras</span> (formadas por pessoas com os mesmos ancestrais), ter escravizados ajudou a consolidar reinos e mostrava a riqueza de cada um. Eles trabalhavam como mineradores, agricultores e artesãos e, às vezes, eram usados para pagar tributos a reis e imperadores.",
+   "A grande mudança veio com os <b>portugueses</b>: eles colocaram os africanos no comércio do Atlântico por <b>componentes étnicos e raciais</b>. Ou seja, a escravidão passou a ser <b>associada à cor da pele negra</b>.",
+   "<div class='olhar'><b>Ideia-chave (texto citado no livro, p. 42):</b> quem compara o tráfico pelo Atlântico com a escravidão antiga para “diminuir” seus horrores está errado. No Atlântico, a pessoa deixa de ser escravizada por crime, dívida ou guerra e passa a ser escravizada pela cor — por isso o texto conclui que a escravidão do negro pelo Atlântico <b>cria o racismo</b>.</div>"
+  ],
+  "perguntas": [
+   {
+    "tag": "conc",
+    "q": "Qual era a diferença entre a escravidão praticada na África antes dos europeus e a que surgiu com o comércio atlântico?",
+    "modelo": "Antes, uma pessoa era escravizada por dívida ou por ser prisioneira de guerra, e isso não tinha a ver com a aparência dela. Com os portugueses e o comércio atlântico, a escravidão passou a ser ligada à cor da pele negra (componentes étnicos e raciais).",
+    "chk": [
+     "Citei dívida ou guerra como causas antigas?",
+     "Disse que depois passou a ser pela cor da pele (étnico-racial)?"
+    ]
+   },
+   {
+    "tag": "apl",
+    "q": "Alguém diz: “Já existia escravidão na África, então o tráfico atlântico não foi tão grave”. Escreva uma resposta para essa pessoa usando o que você leu.",
+    "modelo": "Esse argumento não se sustenta. A escravidão antiga na África era por dívida ou guerra; o tráfico atlântico transformou pessoas em mercadoria e passou a escravizar pela cor da pele — e foi isso que criou o racismo.",
+    "chk": [
+     "Disse que o argumento está errado?",
+     "Usei a diferença dívida/guerra × cor da pele (ou o racismo)?"
+    ]
+   },
+   {
+    "tag": "apl",
+    "q": "Explique o que é fenótipo e por que essa palavra ajuda a entender o racismo.",
+    "modelo": "Fenótipo são as características que a gente vê numa pessoa: cor da pele, olhos, cabelo. Ajuda a entender o racismo porque, no comércio atlântico, as pessoas passaram a ser escravizadas por causa do fenótipo (a pele negra).",
+    "chk": [
+     "Defini fenótipo (características visuais)?",
+     "Liguei fenótipo à escravidão pela cor da pele/racismo?"
+    ]
+   }
+  ]
+ },
+ {
+  "porto": "Roda 8 · Capítulo 16 · pp. 34-37 e 42",
+  "emoji": "🌊",
+  "u": "c16",
+  "titulo": "O comércio atlântico: a travessia e o que ficou",
+  "texto": [
+   "Ao chegar à África, os portugueses queriam primeiro as <b>minas de ouro</b>. Logo perceberam que escravizar e vender pessoas dava muito lucro: trocavam produtos baratos — <b>tecidos, bebidas alcoólicas e ferramentas</b> — por pessoas escravizadas, <b>sem depender de prata ou ouro</b>, e o transporte custava pouco. As trocas entre Europa, África e América formaram o <span class='destaque'>comércio triangular</span>.",
+   "A violência começava em terra: os cativos andavam do interior até o litoral presos pelo pescoço por um instrumento chamado <span class='destaque'>libambo</span>, vigiados por homens armados, às vezes durante meses. No porto, esperavam em <b>barracões</b> com péssimas condições. Depois eram amontoados nos porões dos <span class='destaque'>navios negreiros</span>, chamados de <b>tumbeiros</b> (de “tumba”), por causa das muitas mortes. Doentes chegavam a ser jogados ao mar ainda vivos; a superlotação era proposital, para lucrar mais em menos viagens.",
+   "Estima-se que, entre os séculos XVI e XIX, o tráfico envolveu até <b>12 milhões</b> de pessoas — cerca de <b>4 a 5 milhões</b> só para o Brasil. As regiões de embarque mudaram com o tempo: primeiro <b>Senegâmbia e Alta Guiné</b>; depois o <b>Reino do Congo</b>; e, da segunda metade do século XVII ao XIX, a <b>Costa da Mina</b> (Reino de Daomé; hoje Gana, Togo e Benin). O Golfo de Benin ficou conhecido como <b>Costa dos Escravos</b>, onde hoje está o monumento <b>Porta do Não Retorno</b>. <b>Luanda e Benguela</b> também foram portos importantes. No Brasil, o desembarque era principalmente no <b>Rio de Janeiro e na Bahia</b>.",
+   "Os africanos trouxeram ao Brasil uma herança enorme: na culinária (<b>azeite de dendê, acarajé, vatapá, caruru</b>), na música (<b>berimbau, agogô, afoxé</b>; ritmos como <b>jongo, samba, maxixe e choro</b>), na religião (<b>candomblé</b>, umbanda e outras) e em muitas palavras da nossa língua.",
+   "<div class='olhar'><b>O nome dos tumbeiros:</b> alguns navios tinham nomes como “Boa Intenção” e “Caridade” — sinal do cinismo de quem dizia estar “salvando” os africanos.</div>"
+  ],
+  "perguntas": [
+   {
+    "tag": "conc",
+    "q": "Por que os portugueses passaram a investir no comércio de pessoas escravizadas?",
+    "modelo": "Porque dava muito lucro: eles trocavam produtos baratos (tecidos, bebidas, ferramentas) por pessoas, sem precisar gastar ouro ou prata, e o transporte era barato.",
+    "chk": [
+     "Falei do lucro?",
+     "Citei a troca por produtos baratos (sem ouro/prata) ou o transporte barato?"
+    ]
+   },
+   {
+    "tag": "apl",
+    "q": "Por que os navios negreiros eram chamados de “tumbeiros”? Explique e diga o que esse apelido revela sobre a travessia.",
+    "modelo": "Porque a palavra vem de “tumba”: morria muita gente na viagem. O apelido revela que a travessia era desumana: porões apertados, superlotação, comida ruim, doenças e até doentes jogados ao mar.",
+    "chk": [
+     "Liguei “tumbeiro” a “tumba”/muitas mortes?",
+     "Citei pelo menos uma condição terrível da viagem?"
+    ]
+   },
+   {
+    "tag": "apl",
+    "q": "Escolha um prato, um instrumento ou um ritmo de origem africana citado no livro e escreva uma frase dizendo onde você já viu ou ouviu isso no Brasil.",
+    "modelo": "Exemplo: “Já comi acarajé numa festa — é um prato de origem africana.” (Vale qualquer item do livro: dendê, acarajé, vatapá, caruru, berimbau, agogô, afoxé, jongo, samba, maxixe, choro, candomblé…)",
+    "chk": [
+     "Escolhi um item que está na lista do livro?",
+     "Escrevi uma frase ligando o item à minha vida/ao Brasil?"
+    ]
+   }
+  ]
+ },
+ {
+  "porto": "Roda 9 · Capítulo 17 · pp. 46-49",
+  "emoji": "⚓",
+  "u": "c17",
+  "titulo": "Encontros ou desencontros? O choque cultural",
+  "texto": [
+   "Agora a roda atravessa o Atlântico. As <b>Grandes Navegações</b> aconteceram no contexto do <b>Renascimento</b> e mudaram o conhecimento de mundo dos europeus e o comércio entre os continentes. Na mesma época, as <b>reformas religiosas</b> levaram muita gente a romper com o catolicismo — e a Igreja saiu em busca de <b>novos fiéis</b> nas terras recém-encontradas.",
+   "Na América viviam povos organizados de muitas maneiras, com grande diversidade política, cultural, social e econômica. Por isso o livro pergunta: foi um <b>encontro</b> ou um <b>desencontro</b>? A palavra “encontro” passa uma ideia tranquila, e muitos artistas da época pintaram esse momento como <b>pacífico</b> — mas a colonização não foi assim.",
+   "<span class='destaque'>Colonização</span> é o processo em que Estados europeus expandiram seus domínios sobre outros territórios, que passaram a pertencer a eles, gerando vantagens econômicas e políticas. Apoiados na ideia de <b>superioridade europeia</b>, os colonizadores trataram os habitantes da América como “selvagens e atrasados”.",
+   "No primeiro momento houve um <span class='destaque'>choque cultural</span>: nativos e europeus <b>identificaram suas diferenças e estranharam os costumes uns dos outros</b>. O sociólogo citado no livro compara isso com a sensação de chegar a um país estrangeiro e perder as referências do dia a dia.",
+   "<div class='olhar'><b>Fonte da época:</b> a carta de Pero Vaz de Caminha descreve indígenas dançando com os portugueses e acompanhando a missa. O livro pede para pensar por que historiadores contestam essa imagem de encontro “amigável” — e o trecho da missa já mostra o começo da <b>catequização</b>.</div>"
+  ],
+  "perguntas": [
+   {
+    "tag": "conc",
+    "q": "O que foi o choque cultural entre europeus e povos originários da América?",
+    "modelo": "Foi o primeiro momento do contato, quando nativos e europeus perceberam as diferenças entre eles e estranharam os costumes uns dos outros.",
+    "chk": [
+     "Disse que os dois lados perceberam as diferenças?",
+     "Disse que estranharam os costumes um do outro?"
+    ]
+   },
+   {
+    "tag": "apl",
+    "q": "Por que o livro prefere perguntar “encontros ou desencontros?” em vez de falar só em “encontro”? Responda com as suas palavras.",
+    "modelo": "Porque “encontro” parece algo pacífico e tranquilo, e a colonização da América foi violenta. “Desencontro” mostra que houve estranhamento, imposição e destruição, e não um encontro amigável.",
+    "chk": [
+     "Disse que “encontro” dá ideia de algo pacífico?",
+     "Disse que a colonização foi violenta/houve conflito?"
+    ]
+   },
+   {
+    "tag": "apl",
+    "q": "Imagine chegar a um lugar onde todos falam outra língua, comem coisas que você nunca viu e se cumprimentam de um jeito diferente. Como você se sentiria? Ligue essa situação ao choque cultural.",
+    "modelo": "Eu me sentiria perdido(a), estranhando tudo, porque perdi as minhas referências. Isso é um choque cultural: quando culturas diferentes se encontram, cada lado estranha os costumes do outro — foi o que aconteceu entre europeus e nativos.",
+    "chk": [
+     "Descrevi o estranhamento/perder as referências?",
+     "Liguei ao choque cultural entre europeus e nativos?"
+    ]
+   }
+  ]
+ },
+ {
+  "porto": "Roda 10 · Capítulo 17 · p. 50 e Síntese p. 61",
+  "emoji": "🦠",
+  "u": "c17",
+  "titulo": "Imposição cultural, doenças e alianças",
+  "texto": [
+   "Passado o primeiro contato, os europeus começaram a <b>impor a própria cultura</b> aos nativos: o jeito de se vestir, a religião, a língua e outros costumes. Ao <b>desqualificar a cultura nativa</b>, praticavam o que chamamos de <span class='destaque'>imposição cultural</span>.",
+   "As <b>armas</b> e as <b>doenças</b> trazidas pelos europeus ampliaram a destruição, causando um verdadeiro <span class='destaque'>genocídio</span>. Os espanhóis trouxeram <b>varíola, sarampo e gripe</b>, e os indígenas <b>não tinham anticorpos</b> contra elas. Quando um povo tem contato com um vírus ou uma bactéria pela primeira vez, a doença pode se espalhar muito rápido: é uma <b>epidemia</b> (vários casos da mesma doença num lugar, em pouco tempo). Se ela se espalha pelo mundo, vira <b>pandemia</b>.",
+   "Os europeus também se aproveitaram das <b>rivalidades entre grupos indígenas</b>: apoiavam um grupo contra seu inimigo e transformavam essas inimizades numa <b>estratégia de ocupação</b>.",
+   "Tudo isso <b>desestruturou</b> as civilizações ameríndias (ameríndio = indígena nativo da América) e aumentou o controle europeu sobre as terras dos povos originários. O gráfico do livro mostra a população das Américas: cerca de <b>39 milhões em 1500</b> e apenas <b>10 milhões em 1600</b>.",
+   "<div class='olhar'><b>Síntese do capítulo (p. 61):</b> a invasão europeia às Américas aparece com três marcas — <b>choque cultural</b>; <b>imposição cultural</b>, que desestruturou as culturas americanas; e <b>extermínio das populações nativas</b>, causado pelo uso de armas e por epidemias de doenças trazidas pelos europeus.</div>"
+  ],
+  "perguntas": [
+   {
+    "tag": "conc",
+    "q": "O que é imposição cultural? Cite um exemplo praticado pelos europeus na América.",
+    "modelo": "É quando um povo força outro a adotar a sua cultura e desvaloriza a cultura dele. Exemplo: os europeus fizeram os nativos mudar de religião (catequização), de língua e de jeito de se vestir.",
+    "chk": [
+     "Defini como forçar a própria cultura e desvalorizar a do outro?",
+     "Dei um exemplo (religião, língua, roupas)?"
+    ]
+   },
+   {
+    "tag": "apl",
+    "q": "Olhe os números do gráfico: 39 milhões (1500) e 10 milhões (1600). Quantos milhões de pessoas a população diminuiu e que causas o livro aponta?",
+    "modelo": "Diminuiu cerca de 29 milhões de pessoas (39 − 10 = 29). As causas apontadas são a violência das armas, as doenças trazidas pelos europeus (varíola, sarampo, gripe), contra as quais os indígenas não tinham anticorpos, e a desestruturação das sociedades.",
+    "chk": [
+     "Fiz a conta (cerca de 29 milhões)?",
+     "Citei armas e doenças como causas?"
+    ]
+   },
+   {
+    "tag": "apl",
+    "q": "Explique, como se fosse para um colega do 5º ano, por que uma gripe podia matar tantos indígenas e não matava tantos europeus.",
+    "modelo": "Porque os europeus já conviviam com essas doenças e o corpo deles tinha defesas (anticorpos). Os indígenas nunca tinham tido contato com esses vírus, então o corpo não sabia se defender, e a doença se espalhava rápido.",
+    "chk": [
+     "Falei da falta de anticorpos dos indígenas?",
+     "Expliquei que era o primeiro contato com a doença?"
+    ]
+   }
+  ]
+ },
+ {
+  "porto": "Roda 11 · Capítulo 17 · pp. 51-53",
+  "emoji": "🗺️",
+  "u": "c17",
+  "titulo": "A conquista espanhola e a administração da colônia",
+  "texto": [
+   "<b>Colombo</b> chegou à América Central em <b>1492</b>, iniciando a busca por <b>ouro e riquezas</b>. No começo, foram fundados povoados e feitas expedições para reconhecer o território.",
+   "Em <b>1519</b>, <b>Hernán Cortés</b> partiu de Cuba até o litoral do atual México. Fez <b>alianças com povos locais</b>, que serviram de guias e intérpretes. Em <b>1521</b>, um exército de <b>indígenas e espanhóis</b> destruiu o <b>Império Asteca</b> (também chamado Mexica). Na década de <b>1530</b>, <b>Francisco Pizarro</b> atacou os incas numa <b>emboscada</b> contra o imperador <b>Atahualpa</b>: o poder central inca foi destruído e foi fundada a Cidade dos Reis. Em poucos anos, duas grandes civilizações foram devastadas, apesar da resistência.",
+   "Depois da conquista, a Espanha organizou a administração. A <span class='destaque'>Casa de Contratação</span> (<b>1503</b>, sede em <b>Sevilha</b>) garantia o <b>monopólio</b> do comércio para a Coroa e controlava tudo o que vinha da América. O <span class='destaque'>Conselho das Índias</span> (por volta de <b>1520</b>) ajudava o rei nas principais decisões sobre a colônia.",
+   "A América espanhola foi dividida em <span class='destaque'>vice-reinos</span> — <b>Peru, Nova Espanha, Nova Granada e Rio da Prata</b> —, governados por <b>vice-reis</b> da elite espanhola, que presidiam audiências, faziam julgamentos e controlavam a produção. Havia também as <span class='destaque'>capitanias-gerais</span> — <b>Cuba, Guatemala, Venezuela e Chile</b> —, para o controle <b>militar e estratégico</b>. E havia o <span class='destaque'>cabildo</span>, um <b>conselho municipal</b> que cuidava das leis, dos impostos, do abastecimento, do policiamento e do ensino."
+  ],
+  "perguntas": [
+   {
+    "tag": "conc",
+    "q": "Qual era a função da Casa de Contratação e a do Conselho das Índias?",
+    "modelo": "A Casa de Contratação (1503, em Sevilha) cuidava para que só a Coroa espanhola fizesse comércio com a América (monopólio). O Conselho das Índias (c. 1520) dava apoio ao rei nas decisões importantes sobre a colônia.",
+    "chk": [
+     "Disse que a Casa de Contratação controlava o comércio (monopólio)?",
+     "Disse que o Conselho das Índias ajudava o rei a decidir?"
+    ]
+   },
+   {
+    "tag": "apl",
+    "q": "Você é o rei da Espanha e chegam três problemas: (1) julgar um caso grave numa colônia; (2) proteger um ponto estratégico contra ataques; (3) organizar o policiamento de uma cidade. Qual órgão cuida de cada um: vice-reino, capitania-geral ou cabildo?",
+    "modelo": "(1) Vice-reino — o vice-rei presidia audiências e fazia julgamentos. (2) Capitania-geral — controle militar e estratégico. (3) Cabildo — conselho municipal que cuidava do policiamento, das leis, dos impostos, do abastecimento e do ensino.",
+    "chk": [
+     "Liguei julgamento ao vice-reino e defesa à capitania-geral?",
+     "Liguei o policiamento da cidade ao cabildo?"
+    ]
+   },
+   {
+    "tag": "apl",
+    "q": "Cortés e Pizarro venceram impérios enormes com poucos espanhóis. Usando o livro, explique duas “armas” que ajudaram nessas conquistas além das espadas.",
+    "modelo": "Uma foi a aliança com povos indígenas inimigos dos astecas: o exército que destruiu o Império Asteca tinha indígenas e espanhóis. Outra foi a emboscada contra Atahualpa, que destruiu o poder central inca. (Também valem as doenças trazidas pelos europeus.)",
+    "chk": [
+     "Citei as alianças com povos indígenas?",
+     "Citei a emboscada a Atahualpa (ou as doenças)?"
+    ]
+   }
+  ]
+ },
+ {
+  "porto": "Roda 12 · Capítulo 17 · p. 54 e Síntese p. 61",
+  "emoji": "⛏️",
+  "u": "c17",
+  "titulo": "Trabalho e riqueza na América espanhola",
+  "texto": [
+   "Os espanhóis aproveitaram instituições que já existiam entre os indígenas. A <span class='destaque'>mita</span>, de origem <b>inca</b>, era o envio de homens, feito pelas próprias autoridades indígenas, para trabalhar <b>por pelo menos quatro meses</b> em várias atividades, principalmente nas <b>minas</b>.",
+   "Já a <span class='destaque'>encomienda</span> era o trabalho dos indígenas para <b>pagar tributos</b> cobrados pelos <b>encomenderos</b>, que também tinham a obrigação de <b>catequizar</b> os nativos. Esse trabalho acontecia na mineração e na agricultura.",
+   "Na América espanhola cultivavam-se principalmente <b>batata, cacau, milho, tabaco e açúcar</b>. Também se comercializavam <b>tecidos</b> (Equador), <b>índigo ou anil</b> (El Salvador) e <b>algodão</b> (litoral do Peru). O <b>açúcar</b> era produzido em grandes propriedades voltadas para a <b>exportação</b>, com <b>trabalho escravo</b>, como no Brasil.",
+   "O <b>índigo</b> é uma planta de clima quente da qual se tira uma tinta azul que não desbota. Os maias já a usavam em murais e objetos. Na Europa, por ser raro, o azul virou sinal de luxo e status; com a produção na América ficou mais barato e se popularizou — hoje ele tinge o <b>jeans</b>.",
+   "<div class='olhar'><b>Síntese (p. 61):</b> colonização espanhola = obtenção de grandes lucros por meio do <b>pacto colonial</b> (lembre: a Casa de Contratação garantia o monopólio do comércio para a Coroa); colonização inglesa = fundação de colônias autônomas, que desenvolveram o <b>comércio triangular</b>.</div>"
+  ],
+  "perguntas": [
+   {
+    "tag": "conc",
+    "q": "Qual a diferença entre a mita e a encomienda?",
+    "modelo": "A mita era de origem inca: as autoridades indígenas enviavam homens para trabalhar pelo menos quatro meses, principalmente nas minas. Na encomienda, os indígenas trabalhavam para pagar os tributos aos encomenderos, que em troca tinham de catequizá-los.",
+    "chk": [
+     "Disse que a mita era de origem inca e ligada às minas?",
+     "Disse que a encomienda era trabalho para pagar tributos, com catequização?"
+    ]
+   },
+   {
+    "tag": "apl",
+    "q": "Leia: “O rei entrega a um colono uma aldeia indígena para que ele use o trabalho dos nativos, desde que os ensine na fé católica.” Que sistema de trabalho é esse? Justifique com duas pistas da frase.",
+    "modelo": "É a encomienda. Pistas: o colono recebe o direito de usar o trabalho dos indígenas (o tributo pago em trabalho) e tem a obrigação de ensinar a fé católica (catequizar).",
+    "chk": [
+     "Identifiquei como encomienda?",
+     "Usei as pistas do trabalho e da catequização?"
+    ]
+   },
+   {
+    "tag": "apl",
+    "q": "Você provavelmente tem uma calça jeans. Conte a “viagem” do azul índigo, dos maias até o jeans, em 3 frases.",
+    "modelo": "Os maias tiravam do índigo uma tinta azul que não desbota e pintavam murais e objetos. Na Europa ele era raro, então virou coisa de gente rica. Quando passou a ser produzido na América, o preço caiu, todo mundo passou a usar e hoje ele dá cor ao jeans.",
+    "chk": [
+     "Citei os maias e o uso antigo?",
+     "Citei que era luxo na Europa e ficou barato com a produção americana (jeans)?"
+    ]
+   }
+  ]
+ }
+]
+
+/* ====== ESTADO E PERSISTÊNCIA ====== */
+var CHAVE=KIT+'_leitura_v1';
+var mem={};
+var estado=carregar();
+
+function carregar(){
+  try{ var s=localStorage.getItem(CHAVE); if(s) return JSON.parse(s); }catch(e){ if(mem[CHAVE]) return JSON.parse(mem[CHAVE]); }
+  return {blocos:{}};
+}
+function calcProgresso(){
+  var conf=0, chkPend=0;
+  BLOCOS.forEach(function(bloco,i){
+    var b=estado.blocos[i]; if(!b||!b.conferido) return; conf++;
+    bloco.perguntas.forEach(function(p,j){ var ep=(b.perguntas&&b.perguntas[j])||{chk:{}}; p.chk.forEach(function(pt,k){ if(!ep.chk||!ep.chk[k]) chkPend++; }); });
+  });
+  estado.progresso={conferidos:conf,total:BLOCOS.length,chkPendentes:chkPend};
+  if(conf===BLOCOS.length && chkPend===0){ if(!estado.concluido){ estado.concluido=true; estado.concluidoEm=new Date().toISOString(); } }
+  return estado.progresso;
+}
+function salvar(){
+  calcProgresso();
+  var s=JSON.stringify(estado);
+  try{ localStorage.setItem(CHAVE,s); }catch(e){ mem[CHAVE]=s; }
+  var d=new Date();
+  document.getElementById('salvo').textContent='💾 Salvo às '+d.toLocaleTimeString('pt-BR')+' de '+d.toLocaleDateString('pt-BR');
+  atualizarTrilhaFim();
+}
+function atualizarTrilhaFim(){
+  var p=estado.progresso||calcProgresso();
+  var box=document.getElementById('trilha-fim'), txt=document.getElementById('trilha-fim-txt'), btn=document.getElementById('btn-prox');
+  var h3=box.querySelector('h3');
+  if(estado.concluido||trilhaLiberada()){
+    h3.textContent='✅ Leitura concluída — Quiz destravado!';
+    txt.textContent=estado.concluido?'Você conferiu as 12 rodas e respondeu a autoavaliação. Agora teste o que aprendeu.':'Trilha liberada pelos pais.';
+    btn.classList.remove('off');
+  } else {
+    h3.textContent='🔒 Próxima etapa: Quiz';
+    var faltam=p.total-p.conferidos;
+    txt.textContent=faltam>0 ? 'Destrava quando você conferir as '+p.total+' rodas (faltam '+faltam+').' : 'Falta responder a autoavaliação Sim/Não de '+p.chkPendentes+' ponto(s) para destravar.';
+    btn.classList.add('off');
+  }
+  marcarNav();
+}
+function estBloco(i){ if(!estado.blocos[i]) estado.blocos[i]={aberto:i===0,conferido:false,perguntas:{}}; return estado.blocos[i]; }
+function estPerg(i,j){ var b=estBloco(i); if(!b.perguntas[j]) b.perguntas[j]={resp:'',warned:false,red:false,tentou:'',chk:{}}; return b.perguntas[j]; }
+
+/* ====== ANTICÓPIA (motor validado — Português 7º, 08/10/2026) ====== */
+function normPal(s){
+  return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/<[^>]*>/g,' ').replace(/[^a-z0-9\s]/g,' ').replace(/\s+/g,' ').trim().split(' ').filter(Boolean);
+}
+function maiorRun(aw,bw){
+  var bStr=' '+bw.join(' ')+' ', best=0;
+  for(var i=0;i<aw.length;i++){
+    for(var len=aw.length-i; len>0; len--){
+      var sub=aw.slice(i,i+len).join(' ');
+      if(bStr.indexOf(' '+sub+' ')>=0){ if(len>best)best=len; break; }
+    }
+  }
+  return best;
+}
+function cobertoPorRuns(aw,bw,minRun){
+  var bStr=' '+bw.join(' ')+' ', cov=new Array(aw.length).fill(false);
+  for(var i=0;i<aw.length;i++){
+    for(var len=aw.length-i; len>=minRun; len--){
+      var sub=aw.slice(i,i+len).join(' ');
+      if(bStr.indexOf(' '+sub+' ')>=0){ for(var k=i;k<i+len;k++)cov[k]=true; break; }
+    }
+  }
+  return cov.filter(Boolean).length;
+}
+function ehCopia(resp, textoBloco, pergunta){
+  var a=normPal(resp), src=normPal(textoBloco), q=normPal(pergunta);
+  if(a.length<5) return false;
+  var qStr=' '+q.join(' ')+' ', keep=new Array(a.length).fill(true);
+  for(var i=0;i<a.length;i++){
+    for(var len=a.length-i; len>=4; len--){
+      var sub=a.slice(i,i+len).join(' ');
+      if(qStr.indexOf(' '+sub+' ')>=0){ for(var k=i;k<i+len;k++)keep[k]=false; break; }
+    }
+  }
+  var af=a.filter(function(w,idx){return keep[idx];});
+  if(af.length<5) return false;
+  var run=maiorRun(af,src);
+  var cov=cobertoPorRuns(af,src,5);
+  var ratio=cov/af.length;
+  return run>=8 || ratio>0.6;
+}
+
+/* ====== RENDER ====== */
+function textoPlano(bloco){ return bloco.texto.join(' '); }
+function irBloco(i){ var el=document.getElementById('bloco'+i); if(el) el.scrollIntoView({behavior:'smooth',block:'start'}); }
+
+function render(){
+  var cont=document.getElementById('blocos'); cont.innerHTML='';
+  BLOCOS.forEach(function(bloco,i){
+    var b=estBloco(i);
+    var div=document.createElement('div'); div.className='bloco '+bloco.u+(b.aberto?'':' travado'); div.id='bloco'+i;
+    var html='<div class="bloco-cab"><div class="num">'+(i+1)+'</div><div><div class="porto">'+bloco.porto+'</div><h3>'+bloco.emoji+' '+bloco.titulo+'</h3></div></div>';
+    if(!b.aberto){
+      html+='<div class="cadeado">🔒 Esta roda abre quando você conferir a roda anterior.</div>';
+      div.innerHTML=html; cont.appendChild(div); return;
+    }
+    html+='<div class="bloco-corpo"><div class="texto">';
+    bloco.texto.forEach(function(p){ html+= (p.indexOf('<div')===0 || p.indexOf('<ul')===0 ? p : '<p>'+p+'</p>'); });
+    html+='</div>';
+    bloco.perguntas.forEach(function(p,j){
+      var ep=estPerg(i,j);
+      var tagTxt=p.tag==='conc'?'Conceito':'Aplicação';
+      html+='<div class="perg'+(ep.red?' red':'')+'" id="perg'+i+'_'+j+'">';
+      html+='<span class="tag '+p.tag+'">'+tagTxt+'</span>';
+      html+='<label>'+(j+1)+'. '+p.q+'</label>';
+      html+='<textarea id="ta'+i+'_'+j+'" oninput="digitou('+i+','+j+')">'+(ep.resp||'').replace(/</g,'&lt;')+'</textarea>';
+      html+='<div class="aviso" id="av'+i+'_'+j+'"></div>';
+      html+='<div class="modelo" id="mod'+i+'_'+j+'"><span class="lab">Resposta-modelo</span><p>'+p.modelo+'</p>';
+      html+='<div class="chk" id="chk'+i+'_'+j+'"></div></div>';
+      html+='</div>';
+    });
+    html+='<button class="conferir" id="conf'+i+'" onclick="conferir('+i+')">✔️ Conferir esta roda</button>';
+    html+='<div class="status-bloco" id="st'+i+'"></div>';
+    if(i<BLOCOS.length-1){ html+='<div class="prox" id="px'+i+'"></div>'; }
+    html+='</div>';
+    div.innerHTML=html;
+    cont.appendChild(div);
+  });
+  BLOCOS.forEach(function(bloco,i){
+    var b=estBloco(i);
+    if(b.aberto && b.conferido){ mostrarConferido(i); }
+    atualizarBotao(i);
+  });
+  atualizarRelatorio();
+  atualizarTrilhaFim();
+}
+
+function digitou(i,j){
+  var ep=estPerg(i,j);
+  ep.resp=document.getElementById('ta'+i+'_'+j).value;
+  if(ep.red){
+    var bloco=BLOCOS[i];
+    if(!ehCopia(ep.resp, textoPlano(bloco), bloco.perguntas[j].q)){
+      ep.red=false;
+      var pd=document.getElementById('perg'+i+'_'+j); if(pd) pd.classList.remove('red');
+      var av=document.getElementById('av'+i+'_'+j); if(av){av.className='aviso'; av.textContent='';}
+    }
+  }
+  atualizarBotao(i);
+  salvar();
+  atualizarRelatorio();
+}
+
+function atualizarBotao(i){
+  var b=estBloco(i); if(!b.aberto) return;
+  var btn=document.getElementById('conf'+i); if(!btn) return;
+  if(b.conferido){ btn.textContent='✔️ Roda conferida'; btn.disabled=true; return; }
+  var todas=true;
+  BLOCOS[i].perguntas.forEach(function(p,j){
+    var v=(document.getElementById('ta'+i+'_'+j)||{}).value||estPerg(i,j).resp||'';
+    if(v.trim().length<3) todas=false;
+  });
+  btn.disabled=!todas;
+}
+
+function conferir(i){
+  var bloco=BLOCOS[i], b=estBloco(i);
+  var algumBloqueado=false;
+  bloco.perguntas.forEach(function(p,j){
+    var ep=estPerg(i,j);
+    ep.resp=document.getElementById('ta'+i+'_'+j).value;
+    var av=document.getElementById('av'+i+'_'+j);
+    var copia=ehCopia(ep.resp, textoPlano(bloco), p.q);
+    if(copia){
+      if(!ep.warned || ep.resp===ep.tentou){
+        if(!ep.warned){ ep.warned=true; ep.tentou=ep.resp; }
+        av.className='aviso amarelo';
+        av.innerHTML='✋ Boa parte da sua resposta está igual ao texto. Tente <b>reescrever com as suas palavras</b> — explique como se fosse para um amigo, sem olhar o texto. Pode ficar mais curto e simples: o que vale é ser <b>SEU</b>.';
+        algumBloqueado=true;
+      } else {
+        ep.red=true;
+        av.className='aviso vermelho';
+        av.innerHTML='🔴 Esta resposta continua muito parecida com o texto. Ela foi aceita, mas ficou marcada para revisar. Se reescrever com as suas palavras, a marca some.';
+        document.getElementById('perg'+i+'_'+j).classList.add('red');
+      }
+    } else {
+      ep.red=false;
+      if(av){ av.className='aviso'; av.textContent=''; }
+      var pd=document.getElementById('perg'+i+'_'+j); if(pd) pd.classList.remove('red');
+    }
+  });
+  salvar();
+  if(algumBloqueado){
+    document.getElementById('st'+i).innerHTML='<span style="color:var(--ambar)">✍️ Reescreva as respostas marcadas em amarelo (mude o que escreveu) e clique em Conferir de novo.</span>';
+    return;
+  }
+  b.conferido=true;
+  if(i<BLOCOS.length-1){ estBloco(i+1).aberto=true; }
+  salvar();
+  render();
+  var alvo=document.getElementById('bloco'+i);
+  if(alvo) alvo.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function mostrarConferido(i){
+  var bloco=BLOCOS[i];
+  bloco.perguntas.forEach(function(p,j){
+    var ep=estPerg(i,j);
+    var mod=document.getElementById('mod'+i+'_'+j); if(mod) mod.classList.add('show');
+    if(ep.red){ var pd=document.getElementById('perg'+i+'_'+j); if(pd) pd.classList.add('red');
+      var av=document.getElementById('av'+i+'_'+j); if(av){av.className='aviso vermelho'; av.innerHTML='🔴 Resposta marcada para revisar (muito parecida com o texto). Reescreva com as suas palavras para tirar a marca.';}
+    }
+    var chk=document.getElementById('chk'+i+'_'+j); if(chk){
+      var h='<b style="font-size:.8rem;color:#8fe0b4">Confira você: a sua resposta…</b>';
+      p.chk.forEach(function(pt,k){
+        var val=ep.chk[k]||'';
+        h+='<div class="item"><span>'+pt+'</span><span class="simnao">'
+         +'<button class="sim'+(val==='sim'?' ativo':'')+'" onclick="marcarChk('+i+','+j+','+k+',\'sim\')">Sim</button>'
+         +'<button class="nao'+(val==='nao'?' ativo':'')+'" onclick="marcarChk('+i+','+j+','+k+',\'nao\')">Não</button>'
+         +'</span></div>';
+      });
+      chk.innerHTML=h;
+    }
+  });
+  atualizarStatusBloco(i);
+  var btn=document.getElementById('conf'+i); if(btn){ btn.textContent='✔️ Roda conferida'; btn.disabled=true; }
+  if(i<BLOCOS.length-1){
+    var px=document.getElementById('px'+i);
+    if(px) px.innerHTML='<a href="#bloco'+(i+1)+'" onclick="irBloco('+(i+1)+');return false;">➡️ Ir para a próxima roda</a>';
+  }
+}
+
+function marcarChk(i,j,k,val){
+  var ep=estPerg(i,j); ep.chk[k]=val;
+  salvar(); mostrarConferido(i); atualizarStatusBloco(i); atualizarRelatorio();
+}
+
+function statusPergunta(i,j){
+  var ep=estPerg(i,j), p=BLOCOS[i].perguntas[j];
+  if(ep.red) return 'revisar';
+  var temNao=false, todasResp=true;
+  p.chk.forEach(function(pt,k){ if(ep.chk[k]==='nao') temNao=true; if(!ep.chk[k]) todasResp=false; });
+  if(temNao) return 'revisar';
+  if(!todasResp) return 'pendente';
+  return 'ok';
+}
+function atualizarStatusBloco(i){
+  var st=document.getElementById('st'+i); if(!st) return;
+  var revisar=false, pendente=false;
+  BLOCOS[i].perguntas.forEach(function(p,j){ var s=statusPergunta(i,j); if(s==='revisar')revisar=true; if(s==='pendente')pendente=true; });
+  if(revisar) st.innerHTML='<span style="color:#ffb3b3">🔁 Esta roda tem pontos para revisar.</span>';
+  else if(pendente) st.innerHTML='<span style="color:var(--ambar)">📝 Responda a autoavaliação (Sim/Não) de cada pergunta.</span>';
+  else st.innerHTML='<span style="color:#8fe0b4">✅ Roda concluída com sucesso!</span>';
+  atualizarRelatorio();
+}
+
+function atualizarRelatorio(){
+  var lista=[], totalConf=0, totalRed=0, totalNao=0;
+  BLOCOS.forEach(function(bloco,i){
+    var b=estBloco(i); if(!b.conferido) return; totalConf++;
+    bloco.perguntas.forEach(function(p,j){
+      var ep=estPerg(i,j);
+      if(ep.red){ totalRed++; lista.push('Roda '+(i+1)+' ('+bloco.titulo+'): pergunta '+(j+1)+' — resposta muito parecida com o texto.'); }
+      p.chk.forEach(function(pt,k){ if(ep.chk[k]==='nao'){ totalNao++; lista.push('Roda '+(i+1)+' ('+bloco.titulo+'): revisar — "'+pt+'"'); } });
+    });
+  });
+  var rev=document.getElementById('revisar'), rl=document.getElementById('revisar-lista');
+  if(lista.length){ rev.style.display='block'; rl.innerHTML=lista.map(function(x){return '<li>'+x+'</li>';}).join(''); }
+  else { rev.style.display='none'; rl.innerHTML=''; }
+  var rc=document.getElementById('rel-conteudo');
+  rc.innerHTML='<b>Rodas conferidas:</b> '+totalConf+' de '+BLOCOS.length+'.<br>'
+    +'<b>Respostas marcadas (muito parecidas com o texto):</b> '+totalRed+'.<br>'
+    +'<b>Pontos marcados como "Não" na autoavaliação:</b> '+totalNao+'.<br>'
+    +(lista.length? '<span style="color:#ffb3b3">Há '+lista.length+' ponto(s) para revisar (lista acima).</span>' : '<span style="color:#8fe0b4">Sem pontos pendentes para revisar. 👏</span>');
+}
+
+/* ====== EXPORTAR / IMPORTAR / ZERAR ====== */
+function exportar(){
+  var dados=JSON.stringify(estado,null,2);
+  var blob=new Blob([dados],{type:'application/json'});
+  var a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+  a.download='leitura-guiada_roda-do-grio.json'; a.click();
+}
+function importar(ev){
+  var f=ev.target.files[0]; if(!f) return;
+  var r=new FileReader();
+  r.onload=function(){ try{ estado=JSON.parse(r.result); salvar(); render(); mostrarModal('✅ Progresso importado!',false); }catch(e){ mostrarModal('❌ Arquivo inválido.',false); } };
+  r.readAsText(f);
+}
+var acaoZerar=null;
+function pedirZerar(){ acaoZerar=true; mostrarModal('Tem certeza que quer apagar TODO o progresso desta leitura? (O Quiz continua destravado se já tiver sido destravado.)',true); }
+function mostrarModal(txt,confirmar){
+  document.getElementById('modal-txt').innerHTML=txt;
+  document.getElementById('modal').classList.add('show');
+  document.getElementById('modal-cancel').style.display=confirmar?'inline-block':'none';
+  document.getElementById('modal-ok').textContent=confirmar?'Sim, apagar':'Ok';
+  document.getElementById('modal-ok').onclick=function(){ if(confirmar && acaoZerar){ var c=estado.concluido, ce=estado.concluidoEm; estado={blocos:{}}; if(c){estado.concluido=true; estado.concluidoEm=ce;} salvar(); render(); } acaoZerar=null; fecharModal(); };
+}
+function fecharModal(){ document.getElementById('modal').classList.remove('show'); }
+
+render();
+</script>
+</body>
+</html>
